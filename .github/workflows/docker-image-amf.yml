@@ -26,7 +26,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ${{ env.DOCKERHUB_USERNAME }}/${{ env.DOCKERHUB_REPO_AMF }}
+            louisroyer/dev-free5gc-amf
           tags: |
             type=raw,enable=true,priority=100,prefix=bookworm-,suffix=-slim,value={{date 'YYYY-MM-DD'}}-{{sha}}
           flavor: |
