@@ -49,6 +49,7 @@ awk \
 	-v N2="${N2}" \
 	-v SBI_REGISTER_IP="${SBI_REGISTER_IP}" \
 	-v SBI_BINDING_IP="${SBI_BINDING_IP}" \
+	-v SBI_BINDING_PORT="${SBI_BINDING_PORT:-8000}" \
 	-v MCC="${MCC:-001}" \
 	-v MNC="${MNC:-01}" \
 	-v AMF_ID="${AMF_ID:-0000001}" \
@@ -62,6 +63,7 @@ awk \
 		sub(/%N2/, N2);
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
 		sub(/%SBI_BINDING_IP/, SBI_BINDING_IP);
+		sub(/%SBI_BINDING_PORT/, SBI_BINDING_PORT);
 		sub(/%MCC/, MCC);
 		sub(/%MNC/, MNC);
 		sub(/%AMF_ID/, AMF_ID);
