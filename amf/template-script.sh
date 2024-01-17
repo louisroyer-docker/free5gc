@@ -40,7 +40,7 @@ done
 
 SNSSAI_LIST_SUB=""
 for SNSSAI in ${SNSSAI_LIST}; do
-	if [ -n "${TAI}" ]; then
+	if [ -n "${SNSSAI}" ]; then
 		SNSSAI_LIST_SUB="${SNSSAI_LIST_SUB}\n        ${SNSSAI}"
 	fi
 done
@@ -56,7 +56,7 @@ awk \
 	-v NRF="${NRF}" \
 	-v SUPPORT_DNN_LIST="${SUPPORT_DNN_LIST_SUB}" \
 	-v SNSSAI_LIST="${SNSSAI_LIST_SUB}" \
-	-v TAI="${TAI:-1}" \
+	-v TAC="${TAC:-1}" \
 	-v LOCALITY="${LOCALITY:-area1}" \
 	'{
 		sub(/%N2/, N2);
@@ -69,7 +69,7 @@ awk \
 		sub(/%NRF/, NRF);
 		sub(/%SUPPORT_DNN_LIST/, SUPPORT_DNN_LIST);
 		sub(/%SNSSAI_LIST/, SNSSAI_LIST);
-		sub(/%TAI/, TAI);
+		sub(/%TAC/, TAC);
 		sub(/%LOCALITY/, LOCALITY);
 		print;
 	}' \
