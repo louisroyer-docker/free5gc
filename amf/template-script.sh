@@ -25,8 +25,8 @@ if [ -z "$SUPPORT_DNN_LIST" ]; then
 	echo "Missing mandatory environment variable (SUPPORTED_DNN_LIST)." > /dev/stderr
 	exit 1
 fi
-if [ -z "$SUPPORT_TAI_LIST" ]; then
-	echo "Missing mandatory environment variable (SUPPORT_TAI_LIST)." > /dev/stderr
+if [ -z "$SNSSAI_LIST" ]; then
+	echo "Missing mandatory environment variable (SNSSAI_LIST)." > /dev/stderr
 	exit 1
 fi
 
@@ -38,10 +38,10 @@ for DNN in ${SUPPORT_DNN_LIST}; do
 	fi
 done
 
-SUPPORT_TAI_LIST_SUB=""
-for TAI in ${SUPPORT_TAI_LIST}; do
+SNSSAI_LIST_SUB=""
+for SNSSAI in ${SNSSAI_LIST}; do
 	if [ -n "${TAI}" ]; then
-		SUPPORT_TAI_LIST_SUB="${SUPPORT_TAI_LIST_SUB}\n        ${TAI}"
+		SNSSAI_LIST_SUB="${SNSSAI_LIST_SUB}\n        ${SNSSAI}"
 	fi
 done
 
@@ -55,7 +55,7 @@ awk \
 	-v AMF_NAME="${AMF_NAME:-AMF}" \
 	-v NRF="${NRF}" \
 	-v SUPPORT_DNN_LIST="${SUPPORT_DNN_LIST_SUB}" \
-	-v SUPPORT_TAI_LIST="${SUPPORT_TAI_LIST_SUB}" \
+	-v SNSSAI_LIST="${SNSSAI_LIST_SUB}" \
 	-v TAI="${TAI:-1}" \
 	-v LOCALITY="${LOCALITY:-area1}" \
 	'{
@@ -68,7 +68,7 @@ awk \
 		sub(/%AMF_NAME/, AMF_NAME);
 		sub(/%NRF/, NRF);
 		sub(/%SUPPORT_DNN_LIST/, SUPPORT_DNN_LIST);
-		sub(/%SUPPORT_TAI_LIST/, SUPPORT_TAI_LIST);
+		sub(/%SNSSAI_LIST/, SNSSAI_LIST);
 		sub(/%TAI/, TAI);
 		sub(/%LOCALITY/, LOCALITY);
 		print;

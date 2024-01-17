@@ -41,11 +41,6 @@ environment:
   SUPPORT_DNN_LIST: |-
     - internet
     - edge
-  SUPPORT_TAI_LIST: |-
-    - sst: 1
-      sd: 000001
-    - sst: 1
-      sd: 000002
   SNSSAI_LIST: |-
     - sst: 1
       sd: 000001
