@@ -1,7 +1,7 @@
 # Free5GC Docker Images
 WARNING: **The following images are NOT official builds of Free5GC**, in the future they may include beta-functionalities.
 
-By default, configuration file from templating is used if no `--config` or `-c`is passed as argument. To start without argument, use:
+By default, configuration file from templating is used if no `--config` or `-c` is passed as argument. To start without argument, use:
 
 ```yaml
 command: [" "]
