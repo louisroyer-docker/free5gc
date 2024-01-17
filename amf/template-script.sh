@@ -56,7 +56,7 @@ awk \
 	-v NRF="${NRF}" \
 	-v SUPPORT_DNN_LIST="${SUPPORT_DNN_LIST_SUB}" \
 	-v SNSSAI_LIST="${SNSSAI_LIST_SUB}" \
-	-v TAC="${TAC:-1}" \
+	-v TAC="${TAC:-000001}" \
 	-v LOCALITY="${LOCALITY:-area1}" \
 	'{
 		sub(/%N2/, N2);

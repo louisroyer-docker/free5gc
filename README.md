@@ -46,6 +46,6 @@ environment:
       sd: 000001
     - sst: 1
       sd: 000002
-  TAC: "1"
+  TAC: "000001" # 6 digits
   LOCALITY: "area1"
 ```
