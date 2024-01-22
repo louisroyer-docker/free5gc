@@ -107,3 +107,28 @@ environment:
   MCC: "001"
   MNC: "01"
 ```
+
+### UDM
+- On Dockerhub: [`louisroyer/dev-free5gc-udm`](https://hub.docker.com/r/louisroyer/dev-free5gc-udm). 
+
+Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/udm` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+A copy of the source code is available at in the repository [`free5gc/udm`](https://github.com/free5gc/udm).
+
+Environment variable used to select templating system:
+```yaml
+environment:
+  ROUTING_SCRIPT: "docker-setup"
+  TEMPLATE_SCRIPT: "template-script.sh"
+  TEMPLATE_SCRIPT_ARGS: ""
+  CONFIG_FILE: "/etc/free5gc/udm.yaml"
+  CONFIG_TEMPLATE: "/etc/free5gc/template-udm.yaml"
+```
+
+Environment variables for templating:
+```yaml
+environment:
+  SBI_REGISTER_IP: "udm.sbi" # you can use a domain or an IP address
+  SBI_BINDING_IP: "192.51.100.4" # use only an IP address in this field
+  SBI_BINDING_PORT: "8000" # default: "8000"
+  NRF: "nrf.sbi:8000"
+```
