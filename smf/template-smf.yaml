@@ -1,0 +1,52 @@
+info:
+  version: 1.0.7
+  description: SMF initial local configuration
+
+configuration:
+  smfName: SMF # the name of this SMF
+  sbi: # Service-based interface information
+    scheme: http # the protocol for sbi (http or https)
+    registerIPv4: %SBI_REGISTER_IP # IP used to register to NRF
+    bindingIPv4: %SBI_BINDING_IP # IP used to bind the service
+    port: %SBI_BINDING_PORT # Port used to bind the service
+    tls: # the local path of TLS key
+      key: cert/smf.key # SMF TLS Certificate
+      pem: cert/smf.pem # SMF TLS Private key
+  serviceNameList: # the SBI services provided by this SMF, refer to TS 29.502
+    - nsmf-pdusession # Nsmf_PDUSession service
+    - nsmf-event-exposure # Nsmf_EventExposure service
+    - nsmf-oam # OAM service
+  snssaiInfos: %SNSSAI_INFOS # the S-NSSAI (Single Network Slice Selection Assistance Information) list supported by this AMF
+  plmnList: # the list of PLMN IDs that this SMF belongs to (optional, remove this key when unnecessary)
+    - mcc: %MCC # Mobile Country Code (3 digits string, digit: 0~9)
+      mnc: %MNC # Mobile Network Code (2 or 3 digits string, digit: 0~9)
+  locality: %LOCALITY # Name of the location where a set of AMF, SMF, PCF and UPFs are located
+  pfcp: # the IP address of N4 interface on this SMF (PFCP)
+    # addr config is deprecated in smf config v1.0.3, please use the following config
+    nodeID: %N4 # the Node ID of this SMF
+    listenAddr: %N4 # the IP/FQDN of N4 interface on this SMF (PFCP)
+    externalAddr: %N4 # the IP/FQDN of N4 interface on this SMF (PFCP)
+  userplaneInformation: # list of userplane information
+    upNodes: %UP_NODES # information of userplane node (AN or UPF)
+    links: %LINKS # the topology graph of userplane, A and B represent the two nodes of each link
+  # retransmission timer for pdu session modification command
+  t3591:
+    enable: true     # true or false
+    expireTime: 16s   # default is 6 seconds
+    maxRetryTimes: 3 # the max number of retransmission
+  # retransmission timer for pdu session release command
+  t3592:
+    enable: true     # true or false
+    expireTime: 16s   # default is 6 seconds
+    maxRetryTimes: 3 # the max number of retransmission
+  nrfUri: http://%NRF # a valid URI of NRF
+  nrfCertPem: cert/nrf.pem # NRF Certificate
+  #urrPeriod: 10 # default usage report period in seconds
+  #urrThreshold: 1000 # default usage report threshold in bytes
+  
+  ulcl: false # ulcl is disabled
+
+logger: # log output setting
+  enable: true # true or false
+  level: info # how detailed to output, value: trace, debug, info, warn, error, fatal, panic
+  reportCaller: false # enable the caller report or not, value: true or false

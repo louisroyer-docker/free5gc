@@ -33,7 +33,7 @@ Environment variables for templating:
 environment:
   N2: "192.0.2.1"
   SBI_REGISTER_IP: "amf.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "192.51.100.1" # use only an IP address in this field
+  SBI_BINDING_IP: "198.51.100.1" # use only an IP address in this field
   SBI_BINDING_PORT: "8000" # default: "8000"
   MCC: "001"
   MNC: "01"
@@ -72,7 +72,7 @@ Environment variables for templating:
 ```yaml
 environment:
   SBI_REGISTER_IP: "ausf.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "192.51.100.2" # use only an IP address in this field
+  SBI_BINDING_IP: "198.51.100.2" # use only an IP address in this field
   SBI_BINDING_PORT: "8000" # default: "8000"
   MCC: "001"
   MNC: "01"
@@ -103,7 +103,7 @@ environment:
   MONGO_PORT: "27017"
   MONGO_NAME: "free5gc"
   SBI_REGISTER_IP: "nrf.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "192.51.100.3" # use only an IP address in this field
+  SBI_BINDING_IP: "198.51.100.3" # use only an IP address in this field
   SBI_BINDING_PORT: "8000" # default: "8000"
   MCC: "001"
   MNC: "01"
@@ -134,7 +134,7 @@ environment:
   MONGO_PORT: "27017"
   MONGO_NAME: "free5gc"
   SBI_REGISTER_IP: "pcf.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "192.51.100.5" # use only an IP address in this field
+  SBI_BINDING_IP: "198.51.100.5" # use only an IP address in this field
   SBI_BINDING_PORT: "8000" # default: "8000"
   NRF: "nrf.sbi:8000"
   PCF_NAME: "PCF"
@@ -142,6 +142,85 @@ environment:
 ```
 
 ### SMF
+- On Dockerhub: [`louisroyer/dev-free5gc-smf`](https://hub.docker.com/r/louisroyer/dev-free5gc-smf). 
+
+Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/smf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+A copy of the source code is available at in the repository [`free5gc/smf`](https://github.com/free5gc/smf).
+
+Environment variable used to select templating system:
+```yaml
+environment:
+  ROUTING_SCRIPT: "docker-setup"
+  TEMPLATE_SCRIPT: "template-script.sh"
+  TEMPLATE_SCRIPT_ARGS: ""
+  CONFIG_FILE: "/etc/free5gc/smf.yaml"
+  CONFIG_TEMPLATE: "/etc/free5gc/template-smf.yaml"
+```
+
+Environment variables for templating:
+```yaml
+environment:
+  N4: "203.0.113.1"
+  SBI_REGISTER_IP: "smf.sbi" # you can use a domain or an IP address
+  SBI_BINDING_IP: "198.51.100.6" # use only an IP address in this field
+  SBI_BINDING_PORT: "8000" # default: "8000"
+  NRF: "nrf.sbi:8000"
+  LOCALITY: "area1"
+  MCC: "001"
+  MNC: "01"
+  SNSSAI_INFOS: |-
+    - sNssai:
+        sst: 1
+        sd: 000001
+      dnnInfos:
+        - dnn: internet
+          dns:
+            ipv4: 9.9.9.9
+            ipv6: 2620:fe::fe
+    - sNssai:
+        sst: 1
+        sd: 000002
+      dnnInfos:
+        - dnn: edge
+          dns:
+            ipv4: 9.9.9.9
+            ipv6: 2620:fe::fe
+  UP_NODES: |-
+    gNB1:
+      type: AN
+    UPF:
+      type: UPF
+      nodeID: "203.0.113.2"
+      addr: "203.0.113.2"
+      sNssaiUpfInfos:
+        - sNssai:
+            sst: 1
+            sd: 000001
+          dnnUpfInfoList:
+            - dnn: internet
+              pool:
+                - cidr: 10.0.0.0/24
+              staticPools:
+                - cidr: 10.0.1.0/24
+        - sNssai:
+            sst: 1
+            sd: 000002
+          dnnUpfInfoList:
+            - dnn: edge
+              pool:
+                - cidr: 10.0.2.0/24
+              staticPools:
+                - cidr: 10.0.3.0/24
+      interfaces:
+        - interfaceType: N3
+          endpoints:
+            - 233.252.0.1
+          networkInstances:
+            - internet
+  LINKS: |-
+    - A: gNB1
+      B: UPF
+```
 
 ### UDM
 - On Dockerhub: [`louisroyer/dev-free5gc-udm`](https://hub.docker.com/r/louisroyer/dev-free5gc-udm). 
@@ -163,7 +242,7 @@ Environment variables for templating:
 ```yaml
 environment:
   SBI_REGISTER_IP: "udm.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "192.51.100.7" # use only an IP address in this field
+  SBI_BINDING_IP: "198.51.100.7" # use only an IP address in this field
   SBI_BINDING_PORT: "8000" # default: "8000"
   NRF: "nrf.sbi:8000"
 ```
@@ -191,7 +270,7 @@ environment:
   MONGO_PORT: "27017"
   MONGO_NAME: "free5gc"
   SBI_REGISTER_IP: "udr.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "192.51.100.8" # use only an IP address in this field
+  SBI_BINDING_IP: "198.51.100.8" # use only an IP address in this field
   SBI_BINDING_PORT: "8000" # default: "8000"
   NRF: "nrf.sbi:8000"
 ```
