@@ -132,3 +132,31 @@ environment:
   SBI_BINDING_PORT: "8000" # default: "8000"
   NRF: "nrf.sbi:8000"
 ```
+
+### UDR
+- On Dockerhub: [`louisroyer/dev-free5gc-udr`](https://hub.docker.com/r/louisroyer/dev-free5gc-udr). 
+
+Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/udr` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+A copy of the source code is available at in the repository [`free5gc/udr`](https://github.com/free5gc/udr).
+
+Environment variable used to select templating system:
+```yaml
+environment:
+  ROUTING_SCRIPT: "docker-setup"
+  TEMPLATE_SCRIPT: "template-script.sh"
+  TEMPLATE_SCRIPT_ARGS: ""
+  CONFIG_FILE: "/etc/free5gc/udr.yaml"
+  CONFIG_TEMPLATE: "/etc/free5gc/template-udr.yaml"
+```
+
+Environment variables for templating:
+```yaml
+environment:
+  MONGO_HOST: "mongodb.db"
+  MONGO_PORT: "27017"
+  MONGO_NAME: "free5gc"
+  SBI_REGISTER_IP: "udr.sbi" # you can use a domain or an IP address
+  SBI_BINDING_IP: "192.51.100.5" # use only an IP address in this field
+  SBI_BINDING_PORT: "8000" # default: "8000"
+  NRF: "nrf.sbi:8000"
+```
