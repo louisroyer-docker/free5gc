@@ -155,6 +155,10 @@ environment:
   TEMPLATE_SCRIPT_ARGS: ""
   CONFIG_FILE: "/etc/free5gc/smf.yaml"
   CONFIG_TEMPLATE: "/etc/free5gc/template-smf.yaml"
+  TEMPLATE_SCRIPT_UEROUTING: "template-script-uerouting.sh"
+  TEMPLATE_SCRIPT_UEROUTING_ARGS: ""
+  CONFIG_FILE_UEROUTING: "/etc/free5gc/uerouting.yaml"
+  CONFIG_TEMPLATE_UEROUTING: "/etc/free5gc/template-uerouting.yaml"
 ```
 
 Environment variables for templating:
@@ -220,6 +224,14 @@ environment:
   LINKS: |-
     - A: gNB1
       B: UPF
+  ULCL: "true"
+  UEROUTING_INFO: |-
+    group1:
+      members:
+        - imsi-001010000000001
+      topology:
+        - A: gNB1
+          B: UPF
 ```
 
 ### UDM

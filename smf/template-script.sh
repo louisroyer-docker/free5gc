@@ -69,6 +69,7 @@ awk \
 	-v SNSSAI_INFOS="${SNSSAI_INFOS_SUB}" \
 	-v UP_NODES="${UP_NODES_SUB}" \
 	-v LINKS="${LINKS_SUB}" \
+	-v ULCL="${ULCL:-false}" \
 	'{
 		sub(/%N4/, N4);
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
@@ -81,6 +82,7 @@ awk \
 		sub(/%SNSSAI_INFOS/, SNSSAI_INFOS);
 		sub(/%UP_NODES/, UP_NODES);
 		sub(/%LINKS/, LINKS);
+		sub(/%ULCL/, ULCL);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"

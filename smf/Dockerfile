@@ -36,10 +36,13 @@ COPY ./template-smf.yaml /etc/free5gc/template-smf.yaml
 ENV CONFIG_FILE="/etc/free5gc/smf.yaml"
 ENV CONFIG_TEMPLATE="/etc/free5gc/template-smf.yaml"
 
-# uerouting: ulcl disabled
-# COPY ./template-smf-uerouting.yaml /etc/free5gc/template-smf-uerouting.yaml
-# ENV CONFIG_FILE_UEROUTING="/etc/free5gc/smf.yaml"
-# ENV CONFIG_TEMPLATE_UEROUTING="/etc/free5gc/template-smf.yaml"
+COPY ./template-script-uerouting.sh /usr/local/bin/template-script-uerouting.sh
+ENV TEMPLATE_SCRIPT_UEROUTING="template-script-uerouting.sh"
+ENV TEMPLATE_SCRIPT_UEROUTING_ARGS=""
+
+COPY ./template-uerouting.yaml /etc/free5gc/template-uerouting.yaml
+ENV CONFIG_FILE_UEROUTING="/etc/free5gc/uerouting.yaml"
+ENV CONFIG_TEMPLATE_UEROUTING="/etc/free5gc/template-uerouting.yaml"
 
 
 ENTRYPOINT ["entrypoint.sh"]

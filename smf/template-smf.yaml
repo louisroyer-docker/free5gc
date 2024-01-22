@@ -44,7 +44,7 @@ configuration:
   #urrPeriod: 10 # default usage report period in seconds
   #urrThreshold: 1000 # default usage report threshold in bytes
   
-  ulcl: false # ulcl is disabled
+  ulcl: %ULCL
 
 logger: # log output setting
   enable: true # true or false
