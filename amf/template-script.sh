@@ -52,7 +52,7 @@ awk \
 	-v SBI_BINDING_PORT="${SBI_BINDING_PORT:-8000}" \
 	-v MCC="${MCC:-001}" \
 	-v MNC="${MNC:-01}" \
-	-v AMF_ID="${AMF_ID:-0000001}" \
+	-v AMF_ID="${AMF_ID:-000001}" \
 	-v AMF_NAME="${AMF_NAME:-AMF}" \
 	-v NRF="${NRF}" \
 	-v SUPPORT_DNN_LIST="${SUPPORT_DNN_LIST_SUB}" \
