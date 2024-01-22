@@ -9,6 +9,7 @@ command: [" "]
 
 ## Routing
 If you choose to configure the container using `docker-setup` (default), please refer to [`docker-setup`'s documentation](https://github.com/louisroyer/docker-setup). The environment variable ONESHOT is set to "true".
+By default, it does nothing, but if you intend to use it, don't forget to add the capability `NET_ADMIN`.
 
 ## Configuration
 ### AMF
