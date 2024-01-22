@@ -24,8 +24,6 @@ configuration:
   nsiList: %NSI_LIST
   amfSetList: %AMF_SET_LIST
   amfList: %AMF_LIST
-  taList: %TA_LIST
-  mappingListFromPlmn: %MAPPING_LIST_FROM_PLMN
 logger: # log output setting
   enable: true # true or false
   level: info # how detailed to output, value: trace, debug, info, warn, error, fatal, panic
