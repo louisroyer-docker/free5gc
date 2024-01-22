@@ -110,6 +110,76 @@ environment:
 ```
 
 ### NSSF
+- On Dockerhub: [`louisroyer/dev-free5gc-nssf`](https://hub.docker.com/r/louisroyer/dev-free5gc-nssf). 
+
+Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/nssf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+A copy of the source code is available at in the repository [`free5gc/nssf`](https://github.com/free5gc/nssf).
+
+Environment variable used to select templating system:
+```yaml
+environment:
+  ROUTING_SCRIPT: "docker-setup"
+  TEMPLATE_SCRIPT: "template-script.sh"
+  TEMPLATE_SCRIPT_ARGS: ""
+  CONFIG_FILE: "/etc/free5gc/nssf.yaml"
+  CONFIG_TEMPLATE: "/etc/free5gc/template-nssf.yaml"
+```
+
+Environment variables for templating:
+```yaml
+environment:
+  SBI_REGISTER_IP: "nssf.sbi" # you can use a domain or an IP address
+  SBI_BINDING_IP: "198.51.100.3" # use only an IP address in this field
+  SBI_BINDING_PORT: "8000" # default: "8000"
+  MCC: "001"
+  MNC: "01"
+  NSSF_NAME: "NSSF"
+  SUPPORTED_NSSAI_IN_PLMN_LIST: |-
+    - plmnId:
+        mcc: 001
+        mnc: 01
+      supportedSnssaiList:
+        - sst: 1
+          sd: 000001
+        - sst: 1
+          sd: 000002
+  NSI_LIST: |-
+    - snssai:
+        sst: 1
+      nsiInformationList:
+        - nrfId: http://nrf.sbi:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 10
+  AMF_SET_LIST: |-
+    - amfSetId: 1
+      amfList:
+        - ffa2e8d7-3275-49c7-8631-6af1df1d9d26
+      nrfAmfSet: http://nrf.sbi:8000/nnrf-nfm/v1/nf-instances
+      supportedNssaiAvailabilityData:
+        - tai:
+            plmnId:
+              mcc: 001
+              mnc: 01
+            tac: 00001
+          supportedSnssaiList:
+            - sst: 1
+              sd: 000001
+            - sst: 1
+              sd: 000002
+  TA_LIST: |-
+    - tai:
+        plmnId:
+          mcc: 001
+          mnc: 01
+        tac: 00001
+      accessType: 3GPP_ACCESS
+      supportedSnssaiList:
+        - sst: 1
+          sd: 000001
+        - sst: 1
+          sd: 000002
+  AMF_LIST: "" # new feature I haven't tested
+  MAPPING_LIST_FROM_PLMN: "" # new feature I haven't tested
+```
 
 ### PCF
 - On Dockerhub: [`louisroyer/dev-free5gc-pcf`](https://hub.docker.com/r/louisroyer/dev-free5gc-pcf). 
