@@ -165,18 +165,49 @@ environment:
               sd: 000001
             - sst: 1
               sd: 000002
+  AMF_LIST: |-
+    - nfId: 469de254-2fe5-4ca0-8381-af3f500af77c
+      supportedNssaiAvailabilityData:
+        - tai:
+            plmnId:
+              mcc: 001
+              mnc: 01
+            tac: 1
+          supportedSnssaiList:
+            - sst: 1
+              sd: 000001
+            - sst: 1
+              sd: 000002
   TA_LIST: |-
     - tai:
         plmnId:
           mcc: 001
           mnc: 01
-        tac: 00001
+        tac: 1
       accessType: 3GPP_ACCESS
       supportedSnssaiList:
         - sst: 1
           sd: 000001
         - sst: 1
           sd: 000002
+  MAPPING_LIST_FROM_PLMN: |-
+    - operatorName: dummyoperator
+      homePlmnId:
+        mcc: 001
+        mnc: 02
+      mappingOfSnssai:
+        - servingSnssai:
+            sst: 1
+            sd: 00001
+          homeSnssai:
+            sst: 1
+            sd: 00001
+        - servingSnssai:
+            sst: 1
+            sd: 00002
+          homeSnssai:
+            sst: 1
+            sd: 00002
 ```
 
 ### PCF
