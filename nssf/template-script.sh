@@ -39,10 +39,10 @@ for AMF_SET in ${AMF_SET_LIST}; do
 	fi
 done
 
-AMF_LIST_LIST_SUB=""
-for AMF_LIST in ${AMF_LIST_LIST}; do
-	if [ -n "${AMF_LIST}" ]; then
-		AMF_LIST_LIST_SUB="${AMF_LIST_LIST_SUB}\n    ${AMF_LIST}"
+AMF_LIST_SUB=""
+for AMF in ${AMF_LIST}; do
+	if [ -n "${AMF}" ]; then
+		AMF_LIST_SUB="${AMF_LIST_SUB}\n    ${AMF}"
 	fi
 done
 
