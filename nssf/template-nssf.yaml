@@ -23,6 +23,7 @@ configuration:
   supportedNssaiInPlmnList: %SUPPORTED_NSSAI_IN_PLMN_LIST
   nsiList: %NSI_LIST
   amfSetList: %AMF_SET_LIST
+  taList: %TA_LIST
 logger: # log output setting
   enable: true # true or false
   level: info # how detailed to output, value: trace, debug, info, warn, error, fatal, panic
