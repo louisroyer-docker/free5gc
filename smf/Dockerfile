@@ -27,6 +27,7 @@ COPY --from=builder /go/bin/cmd /usr/local/bin/smf
 
 COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
 ENV ROUTING_SCRIPT="docker-setup"
+ENV ONESHOT="true"
 
 COPY ./template-script.sh /usr/local/bin/template-script.sh
 ENV TEMPLATE_SCRIPT="template-script.sh"

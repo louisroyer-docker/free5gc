@@ -38,7 +38,7 @@ else
 fi
 
 if [ -n "${ROUTING_SCRIPT}" ]; then
-	"${ROUTING_SCRIPT}" &
+	"${ROUTING_SCRIPT}"
 fi
 
 if [[ $config_opt -eq 1 ]] && [[ $uerouting_opt -eq 1 ]] ; then
