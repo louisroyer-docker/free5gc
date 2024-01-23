@@ -177,8 +177,6 @@ environment:
           sd: 000001
         - sst: 1
           sd: 000002
-  AMF_LIST: "" # new feature I haven't tested
-  MAPPING_LIST_FROM_PLMN: "" # new feature I haven't tested
 ```
 
 ### PCF
