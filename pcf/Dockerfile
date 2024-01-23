@@ -5,7 +5,13 @@
 
 FROM golang:1.21 AS builder
 ARG COMMIT=a464e64d772a650a789a7e77fa42b182341152b3
-RUN : ${COMMIT:? Missing build-arg COMMIT.} && go install github.com/free5gc/pcf/cmd@${COMMIT}
+RUN : ${COMMIT:? Missing build-arg COMMIT.} && go install \
+    -ldflags \
+    -X github.com/free5gc/util/version.Version="Louis Royer's build" \
+    -X github.com/free5gc/util/version.BUILD_TIME="" \
+    -X github.com/free5gc/util/version.COMMIT_HASH="${COMMIT}" \
+    -X github.com/free5gc/util/version.COMMIT_TIME="" \
+    github.com/free5gc/pcf/cmd@${COMMIT}
 
 
 FROM louisroyer/base-irit:latest
