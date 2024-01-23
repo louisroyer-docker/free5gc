@@ -6,11 +6,7 @@
 FROM golang:1.21 AS builder
 ARG COMMIT=e70dc732e71ae850404d1eb56e6be13f0075ac0b
 RUN : ${COMMIT:? Missing build-arg COMMIT.} && go install \
-    -ldflags \
-    -X github.com/free5gc/util/version.Version="Louis Royer's build" \
-    -X github.com/free5gc/util/version.BUILD_TIME="" \
-    -X github.com/free5gc/util/version.COMMIT_HASH="${COMMIT}" \
-    -X github.com/free5gc/util/version.COMMIT_TIME="" \
+    -ldflags="-X github.com/free5gc/util/version.Version=https://github.com/louisroyer-docker/free5gc -X github.com/free5gc/util/version.BUILD_TIME= -X github.com/free5gc/util/version.COMMIT_HASH=${COMMIT} -X github.com/free5gc/util/version.COMMIT_TIME=" \
     github.com/free5gc/ausf/cmd@${COMMIT}
 
 
