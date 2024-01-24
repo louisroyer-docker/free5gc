@@ -26,27 +26,18 @@ RUN apt-get update -q && DEBIAN_FRONTEND=non-interactive apt-get install -qy --n
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /go/bin/cmd /usr/local/bin/smf
-
-COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
-ENV ROUTING_SCRIPT="docker-setup"
-ENV ONESHOT="true"
-
-COPY ./template-script.sh /usr/local/bin/template-script.sh
-ENV TEMPLATE_SCRIPT="template-script.sh"
-ENV TEMPLATE_SCRIPT_ARGS=""
-
-COPY ./template-smf.yaml /etc/free5gc/template-smf.yaml
-ENV CONFIG_FILE="/etc/free5gc/smf.yaml"
-ENV CONFIG_TEMPLATE="/etc/free5gc/template-smf.yaml"
-
-COPY ./template-script-uerouting.sh /usr/local/bin/template-script-uerouting.sh
-ENV TEMPLATE_SCRIPT_UEROUTING="template-script-uerouting.sh"
-ENV TEMPLATE_SCRIPT_UEROUTING_ARGS=""
-
-COPY ./template-uerouting.yaml /etc/free5gc/template-uerouting.yaml
-ENV CONFIG_FILE_UEROUTING="/etc/free5gc/uerouting.yaml"
-ENV CONFIG_TEMPLATE_UEROUTING="/etc/free5gc/template-uerouting.yaml"
-
+COPY ./*.sh /usr/local/bin/
+COPY ./template-smf.yaml ./template-uerouting.yaml /usr/local/share/free5gc/
+ENV ROUTING_SCRIPT="docker-setup" \
+    ONESHOT="true" \
+    TEMPLATE_SCRIPT="template-script.sh" \
+    TEMPLATE_SCRIPT_ARGS="" \
+    CONFIG_FILE="/etc/free5gc/smf.yaml" \
+    CONFIG_TEMPLATE="/usr/local/share/free5gc/template-smf.yaml" \
+    TEMPLATE_SCRIPT_UEROUTING="template-script-uerouting.sh" \
+    TEMPLATE_SCRIPT_UEROUTING_ARGS="" \
+    CONFIG_FILE_UEROUTING="/etc/free5gc/uerouting.yaml" \
+    CONFIG_TEMPLATE_UEROUTING="/usr/local/share/free5gc/template-uerouting.yaml"
 
 ENTRYPOINT ["entrypoint.sh"]
 CMD ["--help"]

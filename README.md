@@ -25,7 +25,7 @@ environment:
   TEMPLATE_SCRIPT: "template-script.sh"
   TEMPLATE_SCRIPT_ARGS: ""
   CONFIG_FILE: "/etc/free5gc/amf.yaml"
-  CONFIG_TEMPLATE: "/etc/free5gc/template-amf.yaml"
+  CONFIG_TEMPLATE: "/usr/local/share/free5gc/template-amf.yaml"
 ```
 
 Environment variables for templating:
@@ -65,7 +65,7 @@ environment:
   TEMPLATE_SCRIPT: "template-script.sh"
   TEMPLATE_SCRIPT_ARGS: ""
   CONFIG_FILE: "/etc/free5gc/ausf.yaml"
-  CONFIG_TEMPLATE: "/etc/free5gc/template-ausf.yaml"
+  CONFIG_TEMPLATE: "/usr/local/share/free5gc/template-ausf.yaml"
 ```
 
 Environment variables for templating:
@@ -93,7 +93,7 @@ environment:
   TEMPLATE_SCRIPT: "template-script.sh"
   TEMPLATE_SCRIPT_ARGS: ""
   CONFIG_FILE: "/etc/free5gc/nrf.yaml"
-  CONFIG_TEMPLATE: "/etc/free5gc/template-nrf.yaml"
+  CONFIG_TEMPLATE: "/usr/local/share/free5gc/template-nrf.yaml"
 ```
 
 Environment variables for templating:
@@ -122,7 +122,7 @@ environment:
   TEMPLATE_SCRIPT: "template-script.sh"
   TEMPLATE_SCRIPT_ARGS: ""
   CONFIG_FILE: "/etc/free5gc/nssf.yaml"
-  CONFIG_TEMPLATE: "/etc/free5gc/template-nssf.yaml"
+  CONFIG_TEMPLATE: "/usr/local/share/free5gc/template-nssf.yaml"
 ```
 
 Environment variables for templating:
@@ -223,7 +223,7 @@ environment:
   TEMPLATE_SCRIPT: "template-script.sh"
   TEMPLATE_SCRIPT_ARGS: ""
   CONFIG_FILE: "/etc/free5gc/pcf.yaml"
-  CONFIG_TEMPLATE: "/etc/free5gc/template-pcf.yaml"
+  CONFIG_TEMPLATE: "/usr/local/share/free5gc/template-pcf.yaml"
 ```
 
 Environment variables for templating:
@@ -253,11 +253,11 @@ environment:
   TEMPLATE_SCRIPT: "template-script.sh"
   TEMPLATE_SCRIPT_ARGS: ""
   CONFIG_FILE: "/etc/free5gc/smf.yaml"
-  CONFIG_TEMPLATE: "/etc/free5gc/template-smf.yaml"
+  CONFIG_TEMPLATE: "/usr/local/share/free5gc/template-smf.yaml"
   TEMPLATE_SCRIPT_UEROUTING: "template-script-uerouting.sh"
   TEMPLATE_SCRIPT_UEROUTING_ARGS: ""
   CONFIG_FILE_UEROUTING: "/etc/free5gc/uerouting.yaml"
-  CONFIG_TEMPLATE_UEROUTING: "/etc/free5gc/template-uerouting.yaml"
+  CONFIG_TEMPLATE_UEROUTING: "/usr/local/share/free5gc/template-uerouting.yaml"
 ```
 
 Environment variables for templating:
@@ -346,7 +346,7 @@ environment:
   TEMPLATE_SCRIPT: "template-script.sh"
   TEMPLATE_SCRIPT_ARGS: ""
   CONFIG_FILE: "/etc/free5gc/udm.yaml"
-  CONFIG_TEMPLATE: "/etc/free5gc/template-udm.yaml"
+  CONFIG_TEMPLATE: "/usr/local/share/free5gc/template-udm.yaml"
 ```
 
 Environment variables for templating:
@@ -371,7 +371,7 @@ environment:
   TEMPLATE_SCRIPT: "template-script.sh"
   TEMPLATE_SCRIPT_ARGS: ""
   CONFIG_FILE: "/etc/free5gc/udr.yaml"
-  CONFIG_TEMPLATE: "/etc/free5gc/template-udr.yaml"
+  CONFIG_TEMPLATE: "/usr/local/share/free5gc/template-udr.yaml"
 ```
 
 Environment variables for templating:

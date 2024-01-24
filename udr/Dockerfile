@@ -26,18 +26,14 @@ RUN apt-get update -q && DEBIAN_FRONTEND=non-interactive apt-get install -qy --n
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /go/bin/cmd /usr/local/bin/udr
-
-COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
-ENV ROUTING_SCRIPT="docker-setup"
-ENV ONESHOT="true"
-
-COPY ./template-script.sh /usr/local/bin/template-script.sh
-ENV TEMPLATE_SCRIPT="template-script.sh"
-ENV TEMPLATE_SCRIPT_ARGS=""
-
-COPY ./template-udr.yaml /etc/free5gc/template-udr.yaml
-ENV CONFIG_FILE="/etc/free5gc/udr.yaml"
-ENV CONFIG_TEMPLATE="/etc/free5gc/template-udr.yaml"
+COPY ./*.sh /usr/local/bin/
+COPY ./template-udr.yaml /usr/local/share/free5gc/
+ENV ROUTING_SCRIPT="docker-setup" \
+    ONESHOT="true" \
+    TEMPLATE_SCRIPT="template-script.sh" \
+    TEMPLATE_SCRIPT_ARGS="" \
+    CONFIG_FILE="/etc/free5gc/udr.yaml" \
+    CONFIG_TEMPLATE="/usr/local/share/free5gc/template-udr.yaml"
 
 ENTRYPOINT ["entrypoint.sh"]
 CMD ["--help"]
