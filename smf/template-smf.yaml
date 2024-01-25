@@ -43,7 +43,7 @@ configuration:
   nrfCertPem: cert/nrf.pem # NRF Certificate
   #urrPeriod: 10 # default usage report period in seconds
   #urrThreshold: 1000 # default usage report threshold in bytes
-  
+
   ulcl: %ULCL
 
 logger: # log output setting

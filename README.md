@@ -13,7 +13,7 @@ By default, it does nothing, but if you intend to use it, don't forget to add th
 
 ## Configuration
 ### AMF
-- On Dockerhub: [`louisroyer/dev-free5gc-amf`](https://hub.docker.com/r/louisroyer/dev-free5gc-amf). 
+- On Dockerhub: [`louisroyer/dev-free5gc-amf`](https://hub.docker.com/r/louisroyer/dev-free5gc-amf).
 
 Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/amf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
 A copy of the source code is available at in the repository [`free5gc/amf`](https://github.com/free5gc/amf).
@@ -53,7 +53,7 @@ environment:
 ```
 
 ### AUSF
-- On Dockerhub: [`louisroyer/dev-free5gc-ausf`](https://hub.docker.com/r/louisroyer/dev-free5gc-ausf). 
+- On Dockerhub: [`louisroyer/dev-free5gc-ausf`](https://hub.docker.com/r/louisroyer/dev-free5gc-ausf).
 
 Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/ausf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
 A copy of the source code is available at in the repository [`free5gc/ausf`](https://github.com/free5gc/ausf).
@@ -81,7 +81,7 @@ environment:
 
 
 ### NRF
-- On Dockerhub: [`louisroyer/dev-free5gc-nrf`](https://hub.docker.com/r/louisroyer/dev-free5gc-nrf). 
+- On Dockerhub: [`louisroyer/dev-free5gc-nrf`](https://hub.docker.com/r/louisroyer/dev-free5gc-nrf).
 
 Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/nrf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
 A copy of the source code is available at in the repository [`free5gc/nrf`](https://github.com/free5gc/nrf).
@@ -110,7 +110,7 @@ environment:
 ```
 
 ### NSSF
-- On Dockerhub: [`louisroyer/dev-free5gc-nssf`](https://hub.docker.com/r/louisroyer/dev-free5gc-nssf). 
+- On Dockerhub: [`louisroyer/dev-free5gc-nssf`](https://hub.docker.com/r/louisroyer/dev-free5gc-nssf).
 
 Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/nssf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
 A copy of the source code is available at in the repository [`free5gc/nssf`](https://github.com/free5gc/nssf).
@@ -211,7 +211,7 @@ environment:
 ```
 
 ### PCF
-- On Dockerhub: [`louisroyer/dev-free5gc-pcf`](https://hub.docker.com/r/louisroyer/dev-free5gc-pcf). 
+- On Dockerhub: [`louisroyer/dev-free5gc-pcf`](https://hub.docker.com/r/louisroyer/dev-free5gc-pcf).
 
 Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/pcf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
 A copy of the source code is available at in the repository [`free5gc/pcf`](https://github.com/free5gc/pcf).
@@ -241,7 +241,7 @@ environment:
 ```
 
 ### SMF
-- On Dockerhub: [`louisroyer/dev-free5gc-smf`](https://hub.docker.com/r/louisroyer/dev-free5gc-smf). 
+- On Dockerhub: [`louisroyer/dev-free5gc-smf`](https://hub.docker.com/r/louisroyer/dev-free5gc-smf).
 
 Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/smf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
 A copy of the source code is available at in the repository [`free5gc/smf`](https://github.com/free5gc/smf).
@@ -334,7 +334,7 @@ environment:
 ```
 
 ### UDM
-- On Dockerhub: [`louisroyer/dev-free5gc-udm`](https://hub.docker.com/r/louisroyer/dev-free5gc-udm). 
+- On Dockerhub: [`louisroyer/dev-free5gc-udm`](https://hub.docker.com/r/louisroyer/dev-free5gc-udm).
 
 Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/udm` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
 A copy of the source code is available at in the repository [`free5gc/udm`](https://github.com/free5gc/udm).
@@ -359,7 +359,7 @@ environment:
 ```
 
 ### UDR
-- On Dockerhub: [`louisroyer/dev-free5gc-udr`](https://hub.docker.com/r/louisroyer/dev-free5gc-udr). 
+- On Dockerhub: [`louisroyer/dev-free5gc-udr`](https://hub.docker.com/r/louisroyer/dev-free5gc-udr).
 
 Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/udr` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
 A copy of the source code is available at in the repository [`free5gc/udr`](https://github.com/free5gc/udr).
