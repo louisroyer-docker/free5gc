@@ -5,6 +5,8 @@
 # SPDX-License-Identifier: MIT
 
 set -e
+mkdir -p "$(dirname "${CONFIG_FILE_UEROUTING}")"
+
 if [ -z "$UEROUTING_INFO" ]; then
 	echo "Missing mandatory environment variable (UEROUTING_INFO)." > /dev/stderr
 	exit 1

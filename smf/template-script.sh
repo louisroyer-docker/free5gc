@@ -5,6 +5,8 @@
 # SPDX-License-Identifier: MIT
 
 set -e
+mkdir -p "$(dirname "${CONFIG_FILE}")"
+
 if [ -z "$N4" ]; then
 	echo "Missing mandatory environment variable (N4)." > /dev/stderr
 	exit 1
