@@ -1,13 +1,13 @@
 name: Docker Image CI - NSSF
 
 on:
-  schedule:
-    - cron: '00 04 * * Sun'
   push:
     paths:
       - 'nssf/**'
     branches: [ master ]
   workflow_dispatch:
+  repository_dispatch:
+    types: [docker-build]
 
 jobs:
    docker:
