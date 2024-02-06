@@ -1,13 +1,13 @@
 name: Docker Image CI - UDM
 
 on:
-  schedule:
-    - cron: '00 04 * * Sun'
   push:
     paths:
       - 'udm/**'
     branches: [ master ]
   workflow_dispatch:
+  repository_dispatch:
+    types: [docker-build]
 
 jobs:
    docker:

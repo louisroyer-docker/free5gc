@@ -1,13 +1,13 @@
 name: Docker Image CI - PCF
 
 on:
-  schedule:
-    - cron: '00 04 * * Sun'
   push:
     paths:
       - 'pcf/**'
     branches: [ master ]
   workflow_dispatch:
+  repository_dispatch:
+    types: [docker-build]
 
 jobs:
    docker:
