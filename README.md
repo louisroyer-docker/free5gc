@@ -1,22 +1,25 @@
 # Free5GC Docker Images
-WARNING: **The following images are NOT official builds of Free5GC**, in the future they may include beta-functionalities.
+> [!WARNING]
+> **The following images are NOT official builds of Free5GC**, in the future they may include beta-functionalities.
 
-By default, configuration file from templating is used if no `--config` or `-c` is passed as argument. To start without argument, use:
-
-```yaml
-command: [" "]
-```
+> [!TIP]
+> By default, configuration file from templating is used if no `--config` or `-c` is passed as argument. To start without argument, use:
+> ```yaml
+> command: [" "]
+> ```
 
 ## Routing
-If you choose to configure the container using `docker-setup` (default), please refer to [`docker-setup`'s documentation](https://github.com/louisroyer/docker-setup). The environment variable ONESHOT is set to "true".
+> [!TIP]
+> If you choose to configure the container using `docker-setup` (default), please refer to [`docker-setup`'s documentation](https://github.com/louisroyer/docker-setup). The environment variable ONESHOT is set to "true".
 By default, it does nothing, but if you intend to use it, don't forget to add the capability `NET_ADMIN`.
 
 ## Configuration
 ### AMF
 - On Dockerhub: [`louisroyer/dev-free5gc-amf`](https://hub.docker.com/r/louisroyer/dev-free5gc-amf).
 
-Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/amf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
-A copy of the source code is available at in the repository [`free5gc/amf`](https://github.com/free5gc/amf).
+> [!NOTE]
+> Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/amf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+> A copy of the source code is available at in the repository [`free5gc/amf`](https://github.com/free5gc/amf).
 
 Environment variable used to select templating system:
 ```yaml
@@ -55,8 +58,9 @@ environment:
 ### AUSF
 - On Dockerhub: [`louisroyer/dev-free5gc-ausf`](https://hub.docker.com/r/louisroyer/dev-free5gc-ausf).
 
-Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/ausf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
-A copy of the source code is available at in the repository [`free5gc/ausf`](https://github.com/free5gc/ausf).
+> [!NOTE]
+> Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/ausf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+> A copy of the source code is available at in the repository [`free5gc/ausf`](https://github.com/free5gc/ausf).
 
 Environment variable used to select templating system:
 ```yaml
@@ -83,8 +87,9 @@ environment:
 ### NRF
 - On Dockerhub: [`louisroyer/dev-free5gc-nrf`](https://hub.docker.com/r/louisroyer/dev-free5gc-nrf).
 
-Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/nrf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
-A copy of the source code is available at in the repository [`free5gc/nrf`](https://github.com/free5gc/nrf).
+> [!NOTE]
+> Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/nrf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+> A copy of the source code is available at in the repository [`free5gc/nrf`](https://github.com/free5gc/nrf).
 
 Environment variable used to select templating system:
 ```yaml
@@ -112,8 +117,9 @@ environment:
 ### NSSF
 - On Dockerhub: [`louisroyer/dev-free5gc-nssf`](https://hub.docker.com/r/louisroyer/dev-free5gc-nssf).
 
-Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/nssf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
-A copy of the source code is available at in the repository [`free5gc/nssf`](https://github.com/free5gc/nssf).
+> [!NOTE]
+> Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/nssf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+> A copy of the source code is available at in the repository [`free5gc/nssf`](https://github.com/free5gc/nssf).
 
 Environment variable used to select templating system:
 ```yaml
@@ -213,8 +219,9 @@ environment:
 ### PCF
 - On Dockerhub: [`louisroyer/dev-free5gc-pcf`](https://hub.docker.com/r/louisroyer/dev-free5gc-pcf).
 
-Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/pcf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
-A copy of the source code is available at in the repository [`free5gc/pcf`](https://github.com/free5gc/pcf).
+> [!NOTE]
+> Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/pcf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+> A copy of the source code is available at in the repository [`free5gc/pcf`](https://github.com/free5gc/pcf).
 
 Environment variable used to select templating system:
 ```yaml
@@ -243,8 +250,9 @@ environment:
 ### SMF
 - On Dockerhub: [`louisroyer/dev-free5gc-smf`](https://hub.docker.com/r/louisroyer/dev-free5gc-smf).
 
-Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/smf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
-A copy of the source code is available at in the repository [`free5gc/smf`](https://github.com/free5gc/smf).
+> [!NOTE]
+> Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/smf` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+> A copy of the source code is available at in the repository [`free5gc/smf`](https://github.com/free5gc/smf).
 
 Environment variable used to select templating system:
 ```yaml
@@ -336,8 +344,9 @@ environment:
 ### UDM
 - On Dockerhub: [`louisroyer/dev-free5gc-udm`](https://hub.docker.com/r/louisroyer/dev-free5gc-udm).
 
-Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/udm` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
-A copy of the source code is available at in the repository [`free5gc/udm`](https://github.com/free5gc/udm).
+> [!NOTE]
+> Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/udm` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+> A copy of the source code is available at in the repository [`free5gc/udm`](https://github.com/free5gc/udm).
 
 Environment variable used to select templating system:
 ```yaml
@@ -361,8 +370,9 @@ environment:
 ### UDR
 - On Dockerhub: [`louisroyer/dev-free5gc-udr`](https://hub.docker.com/r/louisroyer/dev-free5gc-udr).
 
-Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/udr` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
-A copy of the source code is available at in the repository [`free5gc/udr`](https://github.com/free5gc/udr).
+> [!NOTE]
+> Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/udr` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+> A copy of the source code is available at in the repository [`free5gc/udr`](https://github.com/free5gc/udr).
 
 Environment variable used to select templating system:
 ```yaml
@@ -389,10 +399,12 @@ environment:
 ### UPF
 - On Dockerhub [`louisroyer/dev-free5gc-upf`](https://hub.docker.com/r/louisroyer/dev-free5gc-upf).
 
-Please note that even if this software is not yet properly packaged using `.deb`, the generated binary files `/usr/local/bin/upf` and `/usr/local/gtp5g-tunnel` are provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
-A copy of the source code is available at in repositories [`free5gc/go-upf`](https://github.com/free5gc/go-upf) and [`free5gc/go-gtp5gnl`](https://github.com/free5gc/go-gtp5gnl).
+> [!NOTE]
+> Please note that even if this software is not yet properly packaged using `.deb`, the generated binary files `/usr/local/bin/upf` and `/usr/local/gtp5g-tunnel` are provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+> A copy of the source code is available at in repositories [`free5gc/go-upf`](https://github.com/free5gc/go-upf) and [`free5gc/go-gtp5gnl`](https://github.com/free5gc/go-gtp5gnl).
 
-To use this UPF, first install [Free5CG's GTP5G kernel module](https://github.com/free5gc/gtp5g) on your host. Please note that you need to have Linux headers installed on the host to be able to install the module (for example, the package `linux-headers-amd64` on Debian if you are on an amd64 architecture).
+> [!IMPORTANT]
+> To use this UPF, first install [Free5CG's GTP5G kernel module](https://github.com/free5gc/gtp5g) on your host. Please note that you need to have Linux headers installed on the host to be able to install the module (for example, the package `linux-headers-amd64` on Debian if you are on an amd64 architecture).
 
 Environment variable used to select templating system:
 ```yaml
