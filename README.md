@@ -385,3 +385,35 @@ environment:
   SBI_BINDING_PORT: "8000" # default: "8000"
   NRF: "nrf.sbi:8000"
 ```
+
+### UPF
+- On Dockerhub [`louisroyer/dev-free5gc-upf`](https://hub.docker.com/r/louisroyer/dev-free5gc-upf).
+
+Please note that even if this software is not yet properly packaged using `.deb`, the generated binary files `/usr/local/bin/upf` and `/usr/local/gtp5g-tunnel` are provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+A copy of the source code is available at in repositories [`free5gc/go-upf`](https://github.com/free5gc/go-upf) and [`free5gc/go-gtp5gnl`](https://github.com/free5gc/go-gtp5gnl).
+
+To use this UPF, first install [Free5CG's GTP5G kernel module](https://github.com/free5gc/gtp5g) on your host. Please note that you need to have Linux headers installed on the host to be able to install the module (for example, the package `linux-headers-amd64` on Debian if you are on an amd64 architecture).
+
+Environment variable used to select templating system:
+```yaml
+environment:
+  ROUTING_SCRIPT: "docker-setup"
+  TEMPLATE_SCRIPT: "template-script.sh"
+  TEMPLATE_SCRIPT_ARGS: ""
+  CONFIG_FILE: "/etc/free5gc/upf.yaml"
+  CONFIG_TEMPLATE: "/usr/local/share/free5gc/template-upf.yaml"
+```
+
+Environment variables for templating:
+```yaml
+environment:
+  N4: "203.0.113.2"
+  IF_LIST: |-
+    - addr: "233.252.0.1"
+      type: N3
+  DNN_LIST: |-
+    - dnn: internet
+      cidr: 10.0.0.0/23
+    - dnn: edge
+      cidr: 10.0.3.0/23
+```
