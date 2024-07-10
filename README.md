@@ -512,7 +512,7 @@ environment:
   MONGO_NAME: "free5gc"
   NRF: "nrf.sbi:8000"
   NRF_PEM: cert/nrf.pem
-  BILLING_IP: "198.51.100.9
+  BILLING_IP: "198.51.100.9"
   CHF_PEM: cert/chf.pem
   CHF_KEY: cert/chf.key
 ```
