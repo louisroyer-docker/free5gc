@@ -1,0 +1,50 @@
+info:
+  version: 1.0.3
+  description: CHF initial local configuration
+
+configuration:
+  chfName: %CHF_NAME # the name of this CHF
+  sbi: # Service-based interface information
+    scheme: http # the protocol for sbi (http or https)
+    registerIPv4: %SBI_REGISTER_IP # IP used to register to NRF
+    bindingIPv4: %SBI_BINDING_IP  # IP used to bind the service
+    port: %SBI_BINDING_PORT # Port used to bind the service
+    tls: # the local path of TLS key
+      pem: %CHF_PEM # UDM TLS Certificate
+      key: %CHF_KEY # UDM TLS Private key
+  nrfUri: http://%NRF # a valid URI of NRF
+  nrfCertPem: %NRF_PEM # NRF Certificate
+  serviceNameList: # the SBI services provided by this CHF, refer to TS 32.291
+    - nchf-convergedcharging # Nchf_ConvergedCharging service
+  mongodb: # the mongodb connected by this CHF
+    name: %MONGO_NAME # Database name in MongoDB
+    url: mongodb://%MONGO_HOST:%MONGO_PORT # URL of MongoDB
+  quotaValidityTime: 10000
+  volumeLimit: 50000
+  volumeLimitPDU: 10000
+  cgf:
+    hostIPv4: %BILLING_IP # billing server ftp server
+    port: 2121 # billing server listen on port 2121
+    listenPort: 2122 # cgf ftp server listen port
+    tls:
+      pem: %CHF_PEM
+      key: %CHF_KEY
+    cdrFilePath: /tmp
+  abmfDiameter: # not used
+    protocol: tcp
+    hostIPv4: 127.0.0.1
+    port: 3868
+    tls:
+      pem: %CHF_PEM
+      key: %CHF_KEY
+  rfDiameter: # not used
+    protocol: tcp
+    hostIPv4: 127.0.0.1
+    port: 3869
+    tls:
+      pem: %CHF_PEM
+      key: %CHF_KEY
+logger: # log output setting
+  enable: true # true or false
+  level: info # how detailed to output, value: trace, debug, info, warn, error, fatal, panic
+  reportCaller: false # enable the caller report or not, value: true or false
