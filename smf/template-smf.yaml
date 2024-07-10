@@ -10,8 +10,8 @@ configuration:
     bindingIPv4: %SBI_BINDING_IP # IP used to bind the service
     port: %SBI_BINDING_PORT # Port used to bind the service
     tls: # the local path of TLS key
-      key: cert/smf.key # SMF TLS Certificate
-      pem: cert/smf.pem # SMF TLS Private key
+      key: %SMF_KEY # SMF TLS Certificate
+      pem: %SMF_PEM # SMF TLS Private key
   serviceNameList: # the SBI services provided by this SMF, refer to TS 29.502
     - nsmf-pdusession # Nsmf_PDUSession service
     - nsmf-event-exposure # Nsmf_EventExposure service
@@ -40,7 +40,7 @@ configuration:
     expireTime: 16s   # default is 6 seconds
     maxRetryTimes: 3 # the max number of retransmission
   nrfUri: http://%NRF # a valid URI of NRF
-  nrfCertPem: cert/nrf.pem # NRF Certificate
+  nrfCertPem: %NRF_PEM # NRF Certificate
   urrPeriod: 10 # default usage report period in seconds
   urrThreshold: 1000 # default usage report threshold in bytes
   requestedUnit: 1000

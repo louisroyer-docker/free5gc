@@ -67,11 +67,14 @@ awk \
 	-v MCC="${MCC:-001}" \
 	-v MNC="${MNC:-01}" \
 	-v NRF="${NRF}" \
+	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
 	-v LOCALITY="${LOCALITY:-area1}" \
 	-v SNSSAI_INFOS="${SNSSAI_INFOS_SUB}" \
 	-v UP_NODES="${UP_NODES_SUB}" \
 	-v LINKS="${LINKS_SUB}" \
 	-v ULCL="${ULCL:-false}" \
+	-v SMF_PEM="${SMF_PEM:-cert/smf.pem}" \
+	-v SMF_KEY="${SMF_KEY:-cert/smf.key}" \
 	'{
 		sub(/%N4/, N4);
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
@@ -80,11 +83,14 @@ awk \
 		sub(/%MCC/, MCC);
 		sub(/%MNC/, MNC);
 		sub(/%NRF/, NRF);
+		sub(/%NRF_PEM/, NRF_PEM);
 		sub(/%LOCALITY/, LOCALITY);
 		sub(/%SNSSAI_INFOS/, SNSSAI_INFOS);
 		sub(/%UP_NODES/, UP_NODES);
 		sub(/%LINKS/, LINKS);
 		sub(/%ULCL/, ULCL);
+		sub(/%SMF_PEM/, SMF_PEM);
+		sub(/%SMF_KEY/, SMF_KEY);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"

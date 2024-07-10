@@ -324,9 +324,12 @@ environment:
   SBI_BINDING_IP: "198.51.100.6" # use only an IP address in this field
   SBI_BINDING_PORT: "8000" # default: "8000"
   NRF: "nrf.sbi:8000"
+  NRF_PEM: cert/nrf.pem
   LOCALITY: "area1"
   MCC: "001"
   MNC: "01"
+  SMF_PEM: cert/smf.pem
+  SMF_KEY: cert/smf.key
   SNSSAI_INFOS: |-
     - sNssai:
         sst: 1
