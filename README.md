@@ -42,7 +42,10 @@ environment:
   MNC: "01"
   AMF_ID: "000001" # 6 digits
   AMF_NAME: "AMF"
+  AMF_PEM: cert/amf.pem
+  AMF_KEY: cert/amf.key
   NRF: "nrf.sbi:8000"
+  NRF_PEM: cert/nrf.pem
   SUPPORT_DNN_LIST: |-
     - internet
     - edge

@@ -13,8 +13,8 @@ configuration:
     bindingIPv4: %SBI_BINDING_IP  # IP used to bind the service
     port: %SBI_BINDING_PORT # port used to bind the service
     tls: # the local path of TLS key
-      pem: cert/amf.pem # AMF TLS Certificate
-      key: cert/amf.key # AMF TLS Private key
+      pem: %AMF_PEM # AMF TLS Certificate
+      key: %AMF_KEY # AMF TLS Private key
   serviceNameList: # the SBI services provided by this AMF, refer to TS 29.518
     - namf-comm # Namf_Communication service
     - namf-evts # Namf_EventExposure service
@@ -39,6 +39,7 @@ configuration:
       snssaiList: %SNSSAI_LIST # the S-NSSAI (Single Network Slice Selection Assistance Information) list supported by this AMF
   supportDnnList: %SUPPORT_DNN_LIST  # the DNN (Data Network Name) list supported by this AMF
   nrfUri: http://%NRF # a valid URI of NRF
+  nrfCertPem: %NRF_PEM
   security:  # NAS security parameters
     integrityOrder: # the priority of integrity algorithms
       - NIA2

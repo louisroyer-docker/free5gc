@@ -56,7 +56,10 @@ awk \
 	-v MNC="${MNC:-01}" \
 	-v AMF_ID="${AMF_ID:-000001}" \
 	-v AMF_NAME="${AMF_NAME:-AMF}" \
+	-v AMF_PEM="${AMF_PEM:-cert/amf.pem}" \
+	-v AMF_KEY="${AMF_KEY:-cert/amf.key}" \
 	-v NRF="${NRF}" \
+	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
 	-v SUPPORT_DNN_LIST="${SUPPORT_DNN_LIST_SUB}" \
 	-v SNSSAI_LIST="${SNSSAI_LIST_SUB}" \
 	-v TAC="${TAC:-000001}" \
@@ -70,7 +73,10 @@ awk \
 		sub(/%MNC/, MNC);
 		sub(/%AMF_ID/, AMF_ID);
 		sub(/%AMF_NAME/, AMF_NAME);
+		sub(/%AMF_PEM/, AMF_PEM);
+		sub(/%AMF_KEY/, AMF_KEY);
 		sub(/%NRF/, NRF);
+		sub(/%NRF_PEM/, NRF_PEM);
 		sub(/%SUPPORT_DNN_LIST/, SUPPORT_DNN_LIST);
 		sub(/%SNSSAI_LIST/, SNSSAI_LIST);
 		sub(/%TAC/, TAC);
