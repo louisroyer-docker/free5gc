@@ -41,8 +41,9 @@ configuration:
     maxRetryTimes: 3 # the max number of retransmission
   nrfUri: http://%NRF # a valid URI of NRF
   nrfCertPem: cert/nrf.pem # NRF Certificate
-  #urrPeriod: 10 # default usage report period in seconds
-  #urrThreshold: 1000 # default usage report threshold in bytes
+  urrPeriod: 10 # default usage report period in seconds
+  urrThreshold: 1000 # default usage report threshold in bytes
+  requestedUnit: 1000
 
   ulcl: %ULCL
 
