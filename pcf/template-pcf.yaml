@@ -10,12 +10,12 @@ configuration:
     bindingIPv4: %SBI_BINDING_IP # IP used to bind the service
     port: %SBI_BINDING_PORT # port used to bind the service
     tls: # the local path of TLS key
-      pem: cert/pcf.pem # PCF TLS Certificate
-      key: cert/pcf.key # PCF TLS Private key
+      pem: %PCF_PEM # PCF TLS Certificate
+      key: %PCF_KEY # PCF TLS Private key
   timeFormat: 2019-01-02 15:04:05 # time format of this PCF
   defaultBdtRefId: BdtPolicyId-   # BDT Reference ID, indicating transfer policies of background data transfer.
   nrfUri: http://%NRF  # a valid URI of NRF
-  nrfCertPem: cert/nrf.pem # NRF Certificate
+  nrfCertPem: %NRF_PEM # NRF Certificate
   serviceList:   # the SBI services provided by this PCF, refer to TS 29.507
     - serviceName: npcf-am-policy-control # Npcf_AMPolicyControl service
     - serviceName: npcf-smpolicycontrol   # Npcf_SMPolicyControl service

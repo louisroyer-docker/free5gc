@@ -76,6 +76,9 @@ awk \
 	-v TA_LIST="${TA_LIST_SUB}" \
 	-v MAPPING_LIST_FROM_PLMN="${MAPPING_LIST_FROM_PLMN_SUB}" \
 	-v NRF="${NRF}" \
+	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
+	-v NSSF_PEM="${NSSF_PEM:-cert/nssf.pem}" \
+	-v NSSF_KEY="${NSSF_KEY:-cert/nssf.key}" \
 	'{
 		sub(/%NSSF_NAME/, NSSF_NAME);
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
@@ -84,6 +87,9 @@ awk \
 		sub(/%MCC/, MCC);
 		sub(/%MNC/, MNC);
 		sub(/%NRF/, NRF);
+		sub(/%NRF_PEM/, NRF_PEM);
+		sub(/%NSSF_PEM/, NSSF_PEM);
+		sub(/%NSSF_KEY/, NSSF_KEY);
 		sub(/%SUPPORTED_NSSAI_IN_PLMN_LIST/, SUPPORTED_NSSAI_IN_PLMN_LIST);
 		sub(/%NSI_LIST/, NSI_LIST);
 		sub(/%AMF_SET_LIST/, AMF_SET_LIST);

@@ -32,8 +32,11 @@ awk \
 	-v SBI_BINDING_IP="${SBI_BINDING_IP}" \
 	-v SBI_BINDING_PORT="${SBI_BINDING_PORT:-8000}" \
 	-v NRF="${NRF}" \
+	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
 	-v LOCALITY="${LOCALITY:-area1}" \
 	-v PCF_NAME="${PCF_NAME:-PCF}" \
+	-v PCF_PEM="${PCF_PEM:-cert/pcf.pem}" \
+	-v PCF_KEY="${PCF_KEY:-cert/pcf.key}" \
 	'{
 		sub(/%MONGO_HOST/, MONGO_HOST);
 		sub(/%MONGO_PORT/, MONGO_PORT);
@@ -42,8 +45,11 @@ awk \
 		sub(/%SBI_BINDING_IP/, SBI_BINDING_IP);
 		sub(/%SBI_BINDING_PORT/, SBI_BINDING_PORT);
 		sub(/%NRF/, NRF);
+		sub(/%NRF_PEM/, NRF_PEM);
 		sub(/%LOCALITY/, LOCALITY);
 		sub(/%PCF_NAME/, PCF_NAME);
+		sub(/%PCF_PEM/, PCF_PEM);
+		sub(/%PCF_KEY/, PCF_KEY);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"

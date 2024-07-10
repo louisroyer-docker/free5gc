@@ -181,6 +181,10 @@ environment:
   MCC: "001"
   MNC: "01"
   NSSF_NAME: "NSSF"
+  NSSF_PEM: cert/nssf.pem
+  NSSF_KEY: cert/nssf.key
+  NRF: "nrf.sbi:8000"
+  NRF_PEM: cert/nrf.pem
   SUPPORTED_NSSAI_IN_PLMN_LIST: |-
     - plmnId:
         mcc: 001
@@ -284,7 +288,10 @@ environment:
   SBI_BINDING_IP: "198.51.100.5" # use only an IP address in this field
   SBI_BINDING_PORT: "8000" # default: "8000"
   NRF: "nrf.sbi:8000"
+  NRF_PEM: cert/nrf.pem
   PCF_NAME: "PCF"
+  PCF_PEM: cert/pcf.pem
+  PCF_KEY: cert/pcf.key
   LOCALITY: "area1"
 ```
 

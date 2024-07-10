@@ -10,13 +10,13 @@ configuration:
     bindingIPv4: %SBI_BINDING_IP  # IP used to bind the service
     port: %SBI_BINDING_PORT # Port used to bind the service
     tls: # the local path of TLS key
-      pem: cert/nssf.pem # NSSF TLS Certificate
-      key: cert/nssf.key # NSSF TLS Private key
+      pem: %NSSF_PEM # NSSF TLS Certificate
+      key: %NSSF_KEY # NSSF TLS Private key
   serviceNameList: # the SBI services provided by this SMF, refer to TS 29.531
     - nnssf-nsselection # Nnssf_NSSelection service
     - nnssf-nssaiavailability # Nnssf_NSSAIAvailability service
   nrfUri: http://%NRF # a valid URI of NRF
-  nrfCertPem: cert/nrf.pem # NRF Certificate
+  nrfCertPem: %NRF_PEM # NRF Certificate
   supportedPlmnList: # the PLMNs (Public land mobile network) list supported by this NSSF
     - mcc: %MCC # Mobile Country Code (3 digits string, digit: 0~9)
       mnc: %MNC # Mobile Network Code (2 or 3 digits string, digit: 0~9)
