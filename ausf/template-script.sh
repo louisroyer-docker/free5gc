@@ -27,6 +27,9 @@ awk \
 	-v MCC="${MCC:-001}" \
 	-v MNC="${MNC:-01}" \
 	-v NRF="${NRF}" \
+	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
+	-v AUSF_PEM="${AUSF_PEM:-cert/ausf.pem}" \
+	-v AUSF_KEY="${AUSF_KEY:-cert/ausf.key}" \
 	'{
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
 		sub(/%SBI_BINDING_IP/, SBI_BINDING_IP);
@@ -34,6 +37,9 @@ awk \
 		sub(/%MCC/, MCC);
 		sub(/%MNC/, MNC);
 		sub(/%NRF/, NRF);
+		sub(/%NRF_PEM/, NRF_PEM);
+		sub(/%AUSF_PEM/, AUSF_PEM);
+		sub(/%AUSF_KEY/, AUSF_KEY);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"

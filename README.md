@@ -84,6 +84,9 @@ environment:
   MCC: "001"
   MNC: "01"
   NRF: "nrf.sbi:8000"
+  NRF_PEM: cert/nrf.pem
+  AUSF_PEM: cert/ausf.pem
+  AUSF_KEY: cert/ausf.key
 ```
 
 ### CHF
