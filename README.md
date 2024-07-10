@@ -429,3 +429,33 @@ environment:
     - dnn: edge
       cidr: 10.0.3.0/23
 ```
+
+### WebConsole
+- On Dockerhub [`louisroyer/dev-free5gc-webconsole`](https://hub.docker.com/r/louisroyer/dev-free5gc-webconsole).
+
+> [!NOTE]
+> Please note that even if this software is not yet properly packaged using `.deb`, the generated binary file `/usr/local/bin/webconsole` is provided to you under Apache Version 2.0 License. A copy of this license can be found in `/usr/share/common-licenses/Apache-2.0`.
+> A copy of the source code is available at in repositories [`free5gc/webconsole`](https://github.com/free5gc/webconsole).
+
+Environment variable used to select templating system:
+```yaml
+environment:
+  ROUTING_SCRIPT: "docker-setup"
+  TEMPLATE_SCRIPT: "template-script.sh"
+  TEMPLATE_SCRIPT_ARGS: ""
+  CONFIG_FILE: "/etc/free5gc/webconsole.yaml"
+  CONFIG_TEMPLATE: "/usr/local/share/free5gc/template-webconsole.yaml"
+```
+
+Environment variables for templating:
+```yaml
+environment:
+  MONGO_HOST: "mongodb.db"
+  MONGO_PORT: "27017"
+  MONGO_NAME: "free5gc"
+  NRF: "nrf.sbi:8000"
+  NRF_PEM: cert/nrf.pem
+  BILLING_IP: "198.51.100.9
+  CHF_PEM: cert/chf.pem
+  CHF_KEY: cert/chf.key
+```

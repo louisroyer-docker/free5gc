@@ -1,0 +1,31 @@
+info:
+  version: 1.0.3
+  description: WebConsole initial local configuration
+
+configuration:
+  mongodb: # the mongodb connected by this webconsole
+    name: %MONGO_NAME # Database name in MongoDB
+    url: mongodb://%MONGO_HOST:%MONGO_PORT # URL of MongoDB
+  nrfUri: http://%NRF # a valid URI of NRF
+  nrfCertPem: %NRF_PEM # NRF Certificate
+  webServer: # disabled
+    scheme: http
+    ipv4Address: 127.0.0.1
+    port: 5000
+  billingServer:
+    enable: true
+    hostIPv4: %BILLING_IP
+    listenPort: 2121
+    portRange: # passive port range
+      start: 2123
+      end: 2130
+    basePath: /tmp/webconsole
+    port: 2122
+    tls:
+      pem: %CHF_PEM
+      key: %CHF_KEY
+
+logger: # log output setting
+  enable: true # true or false
+  level: info # how detailed to output, value: trace, debug, info, warn, error, fatal, panic
+  reportCaller: false # enable the caller report or not, value: true or false
