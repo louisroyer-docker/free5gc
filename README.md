@@ -151,6 +151,8 @@ environment:
   SBI_BINDING_PORT: "8000" # default: "8000"
   MCC: "001"
   MNC: "01"
+  NRF_PEM: cert/nrf.pem
+  NRF_KEY: cert/nrf.key
 ```
 
 ### NSSF

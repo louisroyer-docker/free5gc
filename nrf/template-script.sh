@@ -29,6 +29,8 @@ awk \
 	-v SBI_BINDING_PORT="${SBI_BINDING_PORT:-8000}" \
 	-v MCC="${MCC:-001}" \
 	-v MNC="${MNC:-01}" \
+	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
+	-v NRF_KEY="${NRF_KEY:-cert/nrf.key}" \
 	'{
 		sub(/%MONGO_HOST/, MONGO_HOST);
 		sub(/%MONGO_PORT/, MONGO_PORT);
@@ -38,6 +40,8 @@ awk \
 		sub(/%SBI_BINDING_PORT/, SBI_BINDING_PORT);
 		sub(/%MCC/, MCC);
 		sub(/%MNC/, MNC);
+		sub(/%NRF_PEM/, NRF_PEM);
+		sub(/%NRF_KEY/, NRF_KEY);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"
