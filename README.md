@@ -416,6 +416,9 @@ environment:
   SBI_BINDING_IP: "198.51.100.7" # use only an IP address in this field
   SBI_BINDING_PORT: "8000" # default: "8000"
   NRF: "nrf.sbi:8000"
+  NRF_PEM: cert/nrf.pem
+  UDM_PEM: cert/udm.pem
+  UDM_KEY: cert/udm.key
 ```
 
 ### UDR
