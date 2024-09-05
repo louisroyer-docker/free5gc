@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT
 
 FROM golang:1.21 AS builder
-ARG COMMIT=3f284476f2b70a6f4f1330f2c59f7bdee17e0ec9
+ARG COMMIT=v1.2.3
 RUN : ${COMMIT:? Missing build-arg COMMIT.} && go install \
     -ldflags="-X github.com/free5gc/util/version.VERSION=https://github.com/louisroyer-docker/free5gc -X github.com/free5gc/util/version.BUILD_TIME= -X github.com/free5gc/util/version.COMMIT_HASH=${COMMIT} -X github.com/free5gc/util/version.COMMIT_TIME=" \
     github.com/free5gc/udm/cmd@${COMMIT}

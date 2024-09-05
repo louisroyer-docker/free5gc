@@ -121,6 +121,7 @@ environment:
   CHF_KEY: cert/chf.key
   CHF_PEM: cert/chf.pem
   BILLING_IP: "192.51.100.9"
+  BILLING_ENABLE: "true"
 ```
 
 ### NRF

@@ -23,6 +23,7 @@ configuration:
   volumeLimit: 50000
   volumeLimitPDU: 10000
   cgf:
+    enable: %BILLING_ENABLE
     hostIPv4: %BILLING_IP # billing server ftp server
     port: 2121 # billing server listen on port 2121
     listenPort: 2122 # cgf ftp server listen port

@@ -38,6 +38,7 @@ awk \
 	-v NRF="${NRF}" \
 	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
 	-v BILLING_IP="${BILLING_IP}" \
+	-v BILLING_ENABLE="${BILLING_ENABLE:-true}" \
 	-v CHF_NAME="${CHF_NAME:-CHF}" \
 	-v CHF_PEM="${CHF_PEM:-cert/chf.pem}" \
 	-v CHF_KEY="${CHF_KEY:-cert/chf.key}" \
@@ -50,6 +51,7 @@ awk \
 		sub(/%SBI_BINDING_PORT/, SBI_BINDING_PORT);
 		sub(/%NRF/, NRF);
 		sub(/%NRF_PEM/, NRF_PEM);
+		sub(/%BILLING_ENABLE/, BILLING_ENABLE);
 		sub(/%BILLING_IP/, BILLING_IP);
 		sub(/%CHF_NAME/, CHF_NAME);
 		sub(/%CHF_PEM/, CHF_PEM);

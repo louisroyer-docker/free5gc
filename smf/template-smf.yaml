@@ -26,6 +26,9 @@ configuration:
     nodeID: %N4 # the Node ID of this SMF
     listenAddr: %N4 # the IP/FQDN of N4 interface on this SMF (PFCP)
     externalAddr: %N4 # the IP/FQDN of N4 interface on this SMF (PFCP)
+    assocFailAlertInterval: 10s
+    assocFailRetryInterval: 30s
+    heartbeatInterval: 10s
   userplaneInformation: # list of userplane information
     upNodes: %UP_NODES # information of userplane node (AN or UPF)
     links: %LINKS # the topology graph of userplane, A and B represent the two nodes of each link
@@ -41,8 +44,8 @@ configuration:
     maxRetryTimes: 3 # the max number of retransmission
   nrfUri: http://%NRF # a valid URI of NRF
   nrfCertPem: %NRF_PEM # NRF Certificate
-  urrPeriod: 10 # default usage report period in seconds
-  urrThreshold: 1000 # default usage report threshold in bytes
+  urrPeriod: 30 # default usage report period in seconds
+  urrThreshold: 500000 # default usage report threshold in bytes
   requestedUnit: 1000
 
   ulcl: %ULCL
