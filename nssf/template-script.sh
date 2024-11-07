@@ -79,6 +79,7 @@ awk \
 	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
 	-v NSSF_PEM="${NSSF_PEM:-cert/nssf.pem}" \
 	-v NSSF_KEY="${NSSF_KEY:-cert/nssf.key}" \
+	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
 	'{
 		sub(/%NSSF_NAME/, NSSF_NAME);
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
@@ -96,6 +97,7 @@ awk \
 		sub(/%AMF_LIST/, AMF_LIST);
 		sub(/%TA_LIST/, TA_LIST);
 		sub(/%MAPPING_LIST_FROM_PLMN/, MAPPING_LIST_FROM_PLMN);
+		sub(/%LOG_LEVEL/, LOG_LEVEL);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"

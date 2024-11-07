@@ -37,6 +37,7 @@ awk \
 	-v PCF_NAME="${PCF_NAME:-PCF}" \
 	-v PCF_PEM="${PCF_PEM:-cert/pcf.pem}" \
 	-v PCF_KEY="${PCF_KEY:-cert/pcf.key}" \
+	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
 	'{
 		sub(/%MONGO_HOST/, MONGO_HOST);
 		sub(/%MONGO_PORT/, MONGO_PORT);
@@ -50,6 +51,7 @@ awk \
 		sub(/%PCF_NAME/, PCF_NAME);
 		sub(/%PCF_PEM/, PCF_PEM);
 		sub(/%PCF_KEY/, PCF_KEY);
+		sub(/%LOG_LEVEL/, LOG_LEVEL);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"

@@ -31,6 +31,7 @@ awk \
 	-v MNC="${MNC:-01}" \
 	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
 	-v NRF_KEY="${NRF_KEY:-cert/nrf.key}" \
+	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
 	'{
 		sub(/%MONGO_HOST/, MONGO_HOST);
 		sub(/%MONGO_PORT/, MONGO_PORT);
@@ -42,6 +43,7 @@ awk \
 		sub(/%MNC/, MNC);
 		sub(/%NRF_PEM/, NRF_PEM);
 		sub(/%NRF_KEY/, NRF_KEY);
+		sub(/%LOG_LEVEL/, LOG_LEVEL);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"

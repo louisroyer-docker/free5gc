@@ -64,6 +64,7 @@ awk \
 	-v SNSSAI_LIST="${SNSSAI_LIST_SUB}" \
 	-v TAC="${TAC:-000001}" \
 	-v LOCALITY="${LOCALITY:-area1}" \
+	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
 	'{
 		sub(/%N2/, N2);
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
@@ -81,6 +82,7 @@ awk \
 		sub(/%SNSSAI_LIST/, SNSSAI_LIST);
 		sub(/%TAC/, TAC);
 		sub(/%LOCALITY/, LOCALITY);
+		sub(/%LOG_LEVEL/, LOG_LEVEL);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"
