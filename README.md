@@ -56,6 +56,7 @@ environment:
       sd: 000002
   TAC: "000001" # 6 digits
   LOCALITY: "area1"
+  LOG_LEVEL: "info"
 ```
 
 ### AUSF
@@ -87,6 +88,7 @@ environment:
   NRF_PEM: cert/nrf.pem
   AUSF_PEM: cert/ausf.pem
   AUSF_KEY: cert/ausf.key
+  LOG_LEVEL: "info"
 ```
 
 ### CHF
@@ -122,6 +124,7 @@ environment:
   CHF_PEM: cert/chf.pem
   BILLING_IP: "192.51.100.9"
   BILLING_ENABLE: "true"
+  LOG_LEVEL: "info"
 ```
 
 ### NRF
@@ -154,6 +157,7 @@ environment:
   MNC: "01"
   NRF_PEM: cert/nrf.pem
   NRF_KEY: cert/nrf.key
+  LOG_LEVEL: "info"
 ```
 
 ### NSSF
@@ -260,6 +264,7 @@ environment:
           homeSnssai:
             sst: 1
             sd: 00002
+  LOG_LEVEL: "info"
 ```
 
 ### PCF
@@ -294,6 +299,7 @@ environment:
   PCF_PEM: cert/pcf.pem
   PCF_KEY: cert/pcf.key
   LOCALITY: "area1"
+  LOG_LEVEL: "info"
 ```
 
 ### SMF
@@ -391,6 +397,7 @@ environment:
       topology:
         - A: gNB1
           B: UPF
+  LOG_LEVEL: "info"
 ```
 
 ### UDM
@@ -420,6 +427,7 @@ environment:
   NRF_PEM: cert/nrf.pem
   UDM_PEM: cert/udm.pem
   UDM_KEY: cert/udm.key
+  LOG_LEVEL: "info"
 ```
 
 ### UDR
@@ -452,6 +460,7 @@ environment:
   NRF_PEM: cert/nrf.pem
   UDR_PEM: cert/udr.pem
   UDR_KEY: cert/udr.key
+  LOG_LEVEL: "info"
 ```
 
 ### UPF
@@ -486,6 +495,7 @@ environment:
       cidr: 10.0.0.0/23
     - dnn: edge
       cidr: 10.0.3.0/23
+  LOG_LEVEL: "info"
 ```
 
 ### WebConsole
@@ -516,4 +526,5 @@ environment:
   BILLING_IP: "198.51.100.9"
   CHF_PEM: cert/chf.pem
   CHF_KEY: cert/chf.key
+  LOG_LEVEL: "info"
 ```

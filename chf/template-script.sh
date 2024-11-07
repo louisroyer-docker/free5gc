@@ -42,6 +42,7 @@ awk \
 	-v CHF_NAME="${CHF_NAME:-CHF}" \
 	-v CHF_PEM="${CHF_PEM:-cert/chf.pem}" \
 	-v CHF_KEY="${CHF_KEY:-cert/chf.key}" \
+	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
 	'{
 		sub(/%MONGO_HOST/, MONGO_HOST);
 		sub(/%MONGO_PORT/, MONGO_PORT);
@@ -56,6 +57,7 @@ awk \
 		sub(/%CHF_NAME/, CHF_NAME);
 		sub(/%CHF_PEM/, CHF_PEM);
 		sub(/%CHF_KEY/, CHF_KEY);
+		sub(/%LOG_LEVEL/, LOG_LEVEL);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"

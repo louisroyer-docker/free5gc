@@ -75,6 +75,7 @@ awk \
 	-v ULCL="${ULCL:-false}" \
 	-v SMF_PEM="${SMF_PEM:-cert/smf.pem}" \
 	-v SMF_KEY="${SMF_KEY:-cert/smf.key}" \
+	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
 	'{
 		sub(/%N4/, N4);
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
@@ -91,6 +92,7 @@ awk \
 		sub(/%ULCL/, ULCL);
 		sub(/%SMF_PEM/, SMF_PEM);
 		sub(/%SMF_KEY/, SMF_KEY);
+		sub(/%LOG_LEVEL/, LOG_LEVEL);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"

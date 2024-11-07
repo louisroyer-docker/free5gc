@@ -28,6 +28,7 @@ awk \
 	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
 	-v UDM_PEM="${UDM_PEM:-cert/udm.pem}" \
 	-v UDM_KEY="${UDM_KEY:-cert/udm.key}" \
+	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
 	'{
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
 		sub(/%SBI_BINDING_IP/, SBI_BINDING_IP);
@@ -36,6 +37,7 @@ awk \
 		sub(/%NRF_PEM/, NRF_PEM);
 		sub(/%UDM_PEM/, UDM_PEM);
 		sub(/%UDM_KEY/, UDM_KEY);
+		sub(/%LOG_LEVEL/, LOG_LEVEL);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"
