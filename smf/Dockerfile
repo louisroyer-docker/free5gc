@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MIT
 
 FROM golang:1.21 AS builder
-ARG COMMIT=87a06620f1deb0a82967c37b7baddc34d4e52413
+ARG COMMIT=92b6b888dde1a718abbbe339ff2f78ad0a690a8e
 #RUN : ${COMMIT:? Missing build-arg COMMIT.} && go install \
 #    -ldflags="-X github.com/free5gc/util/version.VERSION=https://github.com/louisroyer-docker/free5gc -X github.com/free5gc/util/version.BUILD_TIME= -X github.com/free5gc/util/version.COMMIT_HASH=${COMMIT} -X github.com/free5gc/util/version.COMMIT_TIME=" \
 #    github.com/free5gc/smf/cmd@${COMMIT}
-RUN : ${COMMIT:? Missing build-arg COMMIT.} &&  git -C /go/src clone --depth 1 --quiet -b fix-ue-ip-addr-downlink https://github.com/louisroyer/free5gc-smf smf
+RUN : ${COMMIT:? Missing build-arg COMMIT.} &&  git -C /go/src clone --depth 1 --quiet -b backport https://github.com/louisroyer/free5gc-smf smf
 WORKDIR /go/src/smf
 RUN mkdir -p /go/bin && go build -o /go/bin/cmd \
      -ldflags="-X github.com/free5gc/util/version.VERSION=https://github.com/louisroyer-docker/free5gc -X github.com/free5gc/util/version.BUILD_TIME= -X github.com/free5gc/util/version.COMMIT_HASH=${COMMIT} -X github.com/free5gc/util/version.COMMIT_TIME=" cmd/main.go
