@@ -22,6 +22,6 @@ configuration:
     - nnrf-disc # Nnrf_NFDiscovery service
 
 logger: # log output setting
-  enable: true # true or false
+  enable: %LOG_ENABLE # true or false
   level: %LOG_LEVEL # how detailed to output, value: trace, debug, info, warn, error, fatal, panic
-  reportCaller: true # enable the calle report or not, value: true or false
+  reportCaller: %LOG_ENABLE # enable the calle report or not, value: true or false

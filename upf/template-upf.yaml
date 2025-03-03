@@ -16,6 +16,6 @@ gtpu:
 dnnList: %DNN_LIST
 
 logger: # log output setting
-  enable: true # true or false
+  enable: %LOG_ENABLE # true or false
   level: %LOG_LEVEL # how detailed to output, value: trace, debug, info, warn, error, fatal, panic
-  reportCaller: false # enable the caller report or not, value: true or false
+  reportCaller: %LOG_REPORT_CALLER # enable the caller report or not, value: true or false

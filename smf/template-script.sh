@@ -76,6 +76,8 @@ awk \
 	-v SMF_PEM="${SMF_PEM:-cert/smf.pem}" \
 	-v SMF_KEY="${SMF_KEY:-cert/smf.key}" \
 	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
+	-v LOG_ENABLE="${LOG_ENABLE:-true}" \
+	-v LOG_REPORT_CALLER="${LOG_REPORT_CALLER:-false}" \
 	'{
 		sub(/%N4/, N4);
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
@@ -93,6 +95,8 @@ awk \
 		sub(/%SMF_PEM/, SMF_PEM);
 		sub(/%SMF_KEY/, SMF_KEY);
 		sub(/%LOG_LEVEL/, LOG_LEVEL);
+		sub(/%LOG_ENABLE/, LOG_ENABLE);
+		sub(/%LOG_REPORT_CALLER/, LOG_REPORT_CALLER);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"

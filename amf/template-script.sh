@@ -65,6 +65,8 @@ awk \
 	-v TAC="${TAC:-000001}" \
 	-v LOCALITY="${LOCALITY:-area1}" \
 	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
+	-v LOG_ENABLE="${LOG_ENABLE:-true}" \
+	-v LOG_REPORT_CALLER="${LOG_REPORT_CALLER:-false}" \
 	'{
 		sub(/%N2/, N2);
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
@@ -83,6 +85,8 @@ awk \
 		sub(/%TAC/, TAC);
 		sub(/%LOCALITY/, LOCALITY);
 		sub(/%LOG_LEVEL/, LOG_LEVEL);
+		sub(/%LOG_ENABLE/, LOG_ENABLE);
+		sub(/%LOG_REPORT_CALLER/, LOG_REPORT_CALLER);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"

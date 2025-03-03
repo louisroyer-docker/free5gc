@@ -29,6 +29,8 @@ awk \
 	-v UDM_PEM="${UDM_PEM:-cert/udm.pem}" \
 	-v UDM_KEY="${UDM_KEY:-cert/udm.key}" \
 	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
+	-v LOG_ENABLE="${LOG_ENABLE:-true}" \
+	-v LOG_REPORT_CALLER="${LOG_REPORT_CALLER:-false}" \
 	'{
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
 		sub(/%SBI_BINDING_IP/, SBI_BINDING_IP);
@@ -38,6 +40,8 @@ awk \
 		sub(/%UDM_PEM/, UDM_PEM);
 		sub(/%UDM_KEY/, UDM_KEY);
 		sub(/%LOG_LEVEL/, LOG_LEVEL);
+		sub(/%LOG_ENABLE/, LOG_ENABLE);
+		sub(/%LOG_REPORT_CALLER/, LOG_REPORT_CALLER);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"

@@ -80,6 +80,8 @@ awk \
 	-v NSSF_PEM="${NSSF_PEM:-cert/nssf.pem}" \
 	-v NSSF_KEY="${NSSF_KEY:-cert/nssf.key}" \
 	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
+	-v LOG_ENABLE="${LOG_ENABLE:-true}" \
+	-v LOG_REPORT_CALLER="${LOG_REPORT_CALLER:-false}" \
 	'{
 		sub(/%NSSF_NAME/, NSSF_NAME);
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
@@ -98,6 +100,8 @@ awk \
 		sub(/%TA_LIST/, TA_LIST);
 		sub(/%MAPPING_LIST_FROM_PLMN/, MAPPING_LIST_FROM_PLMN);
 		sub(/%LOG_LEVEL/, LOG_LEVEL);
+		sub(/%LOG_ENABLE/, LOG_ENABLE);
+		sub(/%LOG_REPORT_CALLER/, LOG_REPORT_CALLER);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"

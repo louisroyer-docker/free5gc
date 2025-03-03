@@ -40,11 +40,15 @@ awk \
 	-v DNN_LIST="${DNN_LIST_SUB}" \
 	-v IF_LIST="${IF_LIST_SUB}" \
 	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
+	-v LOG_ENABLE="${LOG_ENABLE:-true}" \
+	-v LOG_REPORT_CALLER="${LOG_REPORT_CALLER:-false}" \
 	'{
 		sub(/%N4/, N4);
 		sub(/%DNN_LIST/, DNN_LIST);
 		sub(/%IF_LIST/, IF_LIST);
 		sub(/%LOG_LEVEL/, LOG_LEVEL);
+		sub(/%LOG_ENABLE/, LOG_ENABLE);
+		sub(/%LOG_REPORT_CALLER/, LOG_REPORT_CALLER);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"

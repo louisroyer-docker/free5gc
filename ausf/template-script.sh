@@ -31,6 +31,8 @@ awk \
 	-v AUSF_PEM="${AUSF_PEM:-cert/ausf.pem}" \
 	-v AUSF_KEY="${AUSF_KEY:-cert/ausf.key}" \
 	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
+	-v LOG_ENABLE="${LOG_ENABLE:-true}" \
+	-v LOG_REPORT_CALLER="${LOG_REPORT_CALLER:-false}" \
 	'{
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
 		sub(/%SBI_BINDING_IP/, SBI_BINDING_IP);
@@ -42,6 +44,8 @@ awk \
 		sub(/%AUSF_PEM/, AUSF_PEM);
 		sub(/%AUSF_KEY/, AUSF_KEY);
 		sub(/%LOG_LEVEL/, LOG_LEVEL);
+		sub(/%LOG_ENABLE/, LOG_ENABLE);
+		sub(/%LOG_REPORT_CALLER/, LOG_REPORT_CALLER);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"
