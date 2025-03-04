@@ -24,7 +24,7 @@ awk \
 	-v MONGO_HOST="${MONGO_HOST}" \
 	-v MONGO_PORT="${MONGO_PORT:-27017}" \
 	-v MONGO_NAME="${MONGO_NAME:-free5gc}" \
-	-v NRF="${NRF}" \
+	-v NRF_URI="http://${NRF}" \
 	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
 	-v BILLING_IP="${BILLING_IP}" \
 	-v CHF_PEM="${CHF_PEM:-cert/chf.pem}" \
@@ -36,7 +36,7 @@ awk \
 		sub(/%MONGO_HOST/, MONGO_HOST);
 		sub(/%MONGO_PORT/, MONGO_PORT);
 		sub(/%MONGO_NAME/, MONGO_NAME);
-		sub(/%NRF/, NRF);
+		sub(/%NRF_URI/, NRF_URI);
 		sub(/%NRF_PEM/, NRF_PEM);
 		sub(/%BILLING_IP/, BILLING_IP);
 		sub(/%CHF_PEM/, CHF_PEM);

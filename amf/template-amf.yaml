@@ -38,7 +38,7 @@ configuration:
         mnc: %MNC # Mobile Network Code (2 or 3 digits string, digit: 0~9)
       snssaiList: %SNSSAI_LIST # the S-NSSAI (Single Network Slice Selection Assistance Information) list supported by this AMF
   supportDnnList: %SUPPORT_DNN_LIST  # the DNN (Data Network Name) list supported by this AMF
-  nrfUri: http://%NRF # a valid URI of NRF
+  nrfUri: %NRF_URI # a valid URI of NRF
   nrfCertPem: %NRF_PEM
   security:  # NAS security parameters
     integrityOrder: # the priority of integrity algorithms

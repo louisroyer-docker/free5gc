@@ -66,7 +66,7 @@ awk \
 	-v SBI_BINDING_PORT="${SBI_BINDING_PORT:-8000}" \
 	-v MCC="${MCC:-001}" \
 	-v MNC="${MNC:-01}" \
-	-v NRF="${NRF}" \
+	-v NRF_URI="http://${NRF}" \
 	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
 	-v LOCALITY="${LOCALITY:-area1}" \
 	-v SNSSAI_INFOS="${SNSSAI_INFOS_SUB}" \
@@ -85,7 +85,7 @@ awk \
 		sub(/%SBI_BINDING_PORT/, SBI_BINDING_PORT);
 		sub(/%MCC/, MCC);
 		sub(/%MNC/, MNC);
-		sub(/%NRF/, NRF);
+		sub(/%NRF_URI/, NRF_URI);
 		sub(/%NRF_PEM/, NRF_PEM);
 		sub(/%LOCALITY/, LOCALITY);
 		sub(/%SNSSAI_INFOS/, SNSSAI_INFOS);

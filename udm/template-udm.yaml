@@ -17,7 +17,7 @@ configuration:
     tls: # the local path of TLS key
       pem: %UDM_PEM # UDM TLS Certificate
       key: %UDM_KEY # UDM TLS Private key
-  nrfUri: http://%NRF # a valid URI of NRF
+  nrfUri: %NRF_URI # a valid URI of NRF
   nrfCertPem: %NRF_PEM # NRF Certificate
 
   # test data set from TS33501-f60 Annex C.4

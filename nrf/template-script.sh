@@ -31,6 +31,8 @@ awk \
 	-v MNC="${MNC:-01}" \
 	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
 	-v NRF_KEY="${NRF_KEY:-cert/nrf.key}" \
+	-v ROOT_PEM="${ROOT_PEM:-cert/root.pem}" \
+	-v ROOT_KEY="${ROOT_KEY:-cert/root.key}" \
 	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
 	-v LOG_ENABLE="${LOG_ENABLE:-true}" \
 	-v LOG_REPORT_CALLER="${LOG_REPORT_CALLER:-false}" \
@@ -46,6 +48,8 @@ awk \
 		sub(/%MNC/, MNC);
 		sub(/%NRF_PEM/, NRF_PEM);
 		sub(/%NRF_KEY/, NRF_KEY);
+		sub(/%ROOT_PEM/, ROOT_PEM);
+		sub(/%ROOT_KEY/, ROOT_KEY);
 		sub(/%LOG_LEVEL/, LOG_LEVEL);
 		sub(/%LOG_ENABLE/, LOG_ENABLE);
 		sub(/%LOG_REPORT_CALLER/, LOG_REPORT_CALLER);

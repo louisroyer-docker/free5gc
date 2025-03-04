@@ -163,6 +163,8 @@ environment:
   MNC: "01"
   NRF_PEM: cert/nrf.pem
   NRF_KEY: cert/nrf.key
+  ROOT_PEM: cert/root.pem
+  ROOT_KEY: cert/root.key
   LOG_LEVEL: "info"
   LOG_ENABLE: "true"
   LOG_REPORT_CALLER: "false"

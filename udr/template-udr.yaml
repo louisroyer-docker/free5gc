@@ -15,7 +15,7 @@ configuration:
   mongodb:
     name: %MONGO_NAME # Database name in MongoDB
     url: mongodb://%MONGO_HOST:%MONGO_PORT # URL of MongoDB
-  nrfUri: http://%NRF # a valid URI of NRF
+  nrfUri: %NRF_URI # a valid URI of NRF
   nrfCertPem: %NRF_PEM # NRF Certificate
 
 logger: # log output setting

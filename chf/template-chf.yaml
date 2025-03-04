@@ -12,7 +12,7 @@ configuration:
     tls: # the local path of TLS key
       pem: %CHF_PEM # UDM TLS Certificate
       key: %CHF_KEY # UDM TLS Private key
-  nrfUri: http://%NRF # a valid URI of NRF
+  nrfUri: %NRF_URI # a valid URI of NRF
   nrfCertPem: %NRF_PEM # NRF Certificate
   serviceNameList: # the SBI services provided by this CHF, refer to TS 32.291
     - nchf-convergedcharging # Nchf_ConvergedCharging service

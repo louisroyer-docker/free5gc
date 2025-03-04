@@ -31,7 +31,7 @@ awk \
 	-v SBI_REGISTER_IP="${SBI_REGISTER_IP}" \
 	-v SBI_BINDING_IP="${SBI_BINDING_IP}" \
 	-v SBI_BINDING_PORT="${SBI_BINDING_PORT:-8000}" \
-	-v NRF="${NRF}" \
+	-v NRF_URI="http://${NRF}" \
 	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
 	-v UDR_PEM="${UDR_PEM:-cert/udr.pem}" \
 	-v UDR_KEY="${UDR_KEY:-cert/udr.key}" \
@@ -45,7 +45,7 @@ awk \
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
 		sub(/%SBI_BINDING_IP/, SBI_BINDING_IP);
 		sub(/%SBI_BINDING_PORT/, SBI_BINDING_PORT);
-		sub(/%NRF/, NRF);
+		sub(/%NRF_URI/, NRF_URI);
 		sub(/%NRF_PEM/, NRF_PEM);
 		sub(/%UDR_PEM/, UDR_PEM);
 		sub(/%UDR_KEY/, UDR_KEY);

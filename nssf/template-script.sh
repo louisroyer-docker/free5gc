@@ -75,7 +75,7 @@ awk \
 	-v AMF_LIST="${AMF_LIST_SUB}" \
 	-v TA_LIST="${TA_LIST_SUB}" \
 	-v MAPPING_LIST_FROM_PLMN="${MAPPING_LIST_FROM_PLMN_SUB}" \
-	-v NRF="${NRF}" \
+	-v NRF_URI="http://${NRF}" \
 	-v NRF_PEM="${NRF_PEM:-cert/nrf.pem}" \
 	-v NSSF_PEM="${NSSF_PEM:-cert/nssf.pem}" \
 	-v NSSF_KEY="${NSSF_KEY:-cert/nssf.key}" \
@@ -89,7 +89,7 @@ awk \
 		sub(/%SBI_BINDING_PORT/, SBI_BINDING_PORT);
 		sub(/%MCC/, MCC);
 		sub(/%MNC/, MNC);
-		sub(/%NRF/, NRF);
+		sub(/%NRF_URI/, NRF_URI);
 		sub(/%NRF_PEM/, NRF_PEM);
 		sub(/%NSSF_PEM/, NSSF_PEM);
 		sub(/%NSSF_KEY/, NSSF_KEY);

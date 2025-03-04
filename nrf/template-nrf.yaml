@@ -10,9 +10,12 @@ configuration:
     registerIPv4: %SBI_REGISTER_IP # IP used to serve NFs or register to another NRF
     bindingIPv4: %SBI_BINDING_IP  # IP used to bind the service
     port: %SBI_BINDING_PORT # port used to bind the service
-    tls:
+    cert:
       pem: %NRF_PEM
-      key: NRF_KEY
+      key: %NRF_KEY
+    rootcert:
+      pem: %ROOT_PEM
+      key: %ROOT_KEY
     oauth: %OAUTH_ENABLE
   DefaultPlmnId:
     mcc: %MCC # Mobile Country Code (3 digits string, digit: 0~9)
