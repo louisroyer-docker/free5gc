@@ -166,6 +166,7 @@ environment:
   LOG_LEVEL: "info"
   LOG_ENABLE: "true"
   LOG_REPORT_CALLER: "false"
+  OAUTH_ENABLE: "false"
 ```
 
 ### NSSF

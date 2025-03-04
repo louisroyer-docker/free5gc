@@ -13,7 +13,7 @@ configuration:
     tls:
       pem: %NRF_PEM
       key: NRF_KEY
-    oauth: false # disabled to ease debug
+    oauth: %OAUTH_ENABLE
   DefaultPlmnId:
     mcc: %MCC # Mobile Country Code (3 digits string, digit: 0~9)
     mnc: %MNC # Mobile Network Code (2 or 3 digits string, digit: 0~9)

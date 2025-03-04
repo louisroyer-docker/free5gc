@@ -34,6 +34,7 @@ awk \
 	-v LOG_LEVEL="${LOG_LEVEL:-info}" \
 	-v LOG_ENABLE="${LOG_ENABLE:-true}" \
 	-v LOG_REPORT_CALLER="${LOG_REPORT_CALLER:-false}" \
+	-v OAUTH_ENABLE="${OAUTH_ENABLE:-false}" \
 	'{
 		sub(/%MONGO_HOST/, MONGO_HOST);
 		sub(/%MONGO_PORT/, MONGO_PORT);
@@ -48,6 +49,7 @@ awk \
 		sub(/%LOG_LEVEL/, LOG_LEVEL);
 		sub(/%LOG_ENABLE/, LOG_ENABLE);
 		sub(/%LOG_REPORT_CALLER/, LOG_REPORT_CALLER);
+		sub(/%OAUTH_ENABLE/, OAUTH_ENABLE);
 		print;
 	}' \
 	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"
