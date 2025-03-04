@@ -4,10 +4,17 @@
 # SPDX-License-Identifier: MIT
 
 FROM golang:1.21 AS builder
-ARG COMMIT=v1.2.5
-RUN : ${COMMIT:? Missing build-arg COMMIT.} && go install \
-    -ldflags="-X github.com/free5gc/util/version.VERSION=https://github.com/louisroyer-docker/free5gc -X github.com/free5gc/util/version.BUILD_TIME= -X github.com/free5gc/util/version.COMMIT_HASH=${COMMIT} -X github.com/free5gc/util/version.COMMIT_TIME=" \
-    github.com/free5gc/udm/cmd@${COMMIT}
+# NOTE: 68354b63c8db7b0ee324139bab77d35dc796dcc9 is v1.3.0, but this tag has already been used previously
+# See https://github.com/free5gc/free5gc/issues/653
+#ARG COMMIT=v1.2.5
+ARG COMMIT=68354b63c8db7b0ee324139bab77d35dc796dcc9
+#RUN : ${COMMIT:? Missing build-arg COMMIT.} && go install \
+#    -ldflags="-X github.com/free5gc/util/version.VERSION=https://github.com/louisroyer-docker/free5gc -X github.com/free5gc/util/version.BUILD_TIME= -X github.com/free5gc/util/version.COMMIT_HASH=${COMMIT} -X github.com/free5gc/util/version.COMMIT_TIME=" \
+#    github.com/free5gc/udm/cmd@${COMMIT}
+RUN : ${COMMIT:? Missing build-arg COMMIT.} &&  git -C /go/src clone --depth 1 --quiet -b main https://github.com/free5gc/udm udm
+WORKDIR /go/src/udm
+RUN mkdir -p /go/bin && go build -o /go/bin/cmd \
+     -ldflags="-X github.com/free5gc/util/version.VERSION=https://github.com/louisroyer-docker/free5gc -X github.com/free5gc/util/version.BUILD_TIME= -X github.com/free5gc/util/version.COMMIT_HASH=${COMMIT} -X github.com/free5gc/util/version.COMMIT_TIME=" cmd/main.go
 
 
 FROM louisroyer/base-irit:latest
