@@ -4,17 +4,10 @@
 # SPDX-License-Identifier: MIT
 
 FROM golang:1.21 AS builder
-# NOTE: 593c2aa6011614759dc45d009a99163dcd3148a5 is v1.3.0, but this tag has already been used previously
-# See https://github.com/free5gc/free5gc/issues/653
-#ARG COMMIT=v1.2.7
-ARG COMMIT=593c2aa6011614759dc45d009a99163dcd3148a5
-#RUN : ${COMMIT:? Missing build-arg COMMIT.} && go install \
-#    -ldflags="-X github.com/free5gc/util/version.VERSION=https://github.com/louisroyer-docker/free5gc -X github.com/free5gc/util/version.BUILD_TIME= -X github.com/free5gc/util/version.COMMIT_HASH=${COMMIT} -X github.com/free5gc/util/version.COMMIT_TIME=" \
-#    github.com/free5gc/pcf/cmd@${COMMIT}
-RUN : ${COMMIT:? Missing build-arg COMMIT.} &&  git -C /go/src clone --depth 1 --quiet -b main https://github.com/free5gc/pcf pcf
-WORKDIR /go/src/pcf
-RUN mkdir -p /go/bin && go build -o /go/bin/cmd \
-     -ldflags="-X github.com/free5gc/util/version.VERSION=https://github.com/louisroyer-docker/free5gc -X github.com/free5gc/util/version.BUILD_TIME= -X github.com/free5gc/util/version.COMMIT_HASH=${COMMIT} -X github.com/free5gc/util/version.COMMIT_TIME=" cmd/main.go
+ARG COMMIT=v1.3.1
+RUN : ${COMMIT:? Missing build-arg COMMIT.} && go install \
+    -ldflags="-X github.com/free5gc/util/version.VERSION=https://github.com/louisroyer-docker/free5gc -X github.com/free5gc/util/version.BUILD_TIME= -X github.com/free5gc/util/version.COMMIT_HASH=${COMMIT} -X github.com/free5gc/util/version.COMMIT_TIME=" \
+    github.com/free5gc/pcf/cmd@${COMMIT}
 
 
 FROM louisroyer/base-irit:latest
