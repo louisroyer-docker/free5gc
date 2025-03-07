@@ -11,21 +11,32 @@ if [ -z "$MONGO_HOST" ]; then
 	echo "Missing mandatory environment variable (MONGO_HOST)." > /dev/stderr
 	exit 1
 fi
-if [ -z "$SBI_REGISTER_IP" ]; then
-	echo "Missing mandatory environment variable (SBI_REGISTER_IP)." > /dev/stderr
-	exit 1
+if [ -z "$SBI_BINDING_IPV4" ]; then
+	if [ -z "$SBI_BINDING_IP" ]; then
+		echo "Missing mandatory environment variable (SBI_BINDING_IPV4)." > /dev/stderr
+		exit 1
+	else
+		echo "Warning: SBI_BINDING_IP is deprecated. Use SBI_BINDING_IPV4 instead." > /dev/stderr
+		SBI_BINDING_IPV4="${SBI_BINDING_IP}"
+	fi
 fi
-if [ -z "$SBI_BINDING_IP" ]; then
-	echo "Missing mandatory environment variable (SBI_BINDING_IP)." > /dev/stderr
-	exit 1
+if [ -z "$SBI_REGISTER_IPV4" ]; then
+	if [ -z "$SBI_REGISTER_IP" ]; then
+		# fallback on SBI_BINDING_IPV4
+		SBI_REGISTER_IPV4="${SBI_BINDING_IPV4}"
+		exit 1
+	else
+		echo "Warning: SBI_REGISTER_IP is deprecated. Use SBI_REGISTER_IPV4 instead." > /dev/stderr
+		SBI_REGISTER_IPV4="${SBI_REGISTER_IP}"
+	fi
 fi
 
 awk \
 	-v MONGO_HOST="${MONGO_HOST}" \
 	-v MONGO_PORT="${MONGO_PORT:-27017}" \
 	-v MONGO_NAME="${MONGO_NAME:-free5gc}" \
-	-v SBI_REGISTER_IP="${SBI_REGISTER_IP}" \
-	-v SBI_BINDING_IP="${SBI_BINDING_IP}" \
+	-v SBI_REGISTER_IPV4="${SBI_REGISTER_IPV4}" \
+	-v SBI_BINDING_IPV4="${SBI_BINDING_IPV4}" \
 	-v SBI_BINDING_PORT="${SBI_BINDING_PORT:-8000}" \
 	-v MCC="${MCC:-001}" \
 	-v MNC="${MNC:-01}" \
@@ -41,8 +52,8 @@ awk \
 		sub(/%MONGO_HOST/, MONGO_HOST);
 		sub(/%MONGO_PORT/, MONGO_PORT);
 		sub(/%MONGO_NAME/, MONGO_NAME);
-		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
-		sub(/%SBI_BINDING_IP/, SBI_BINDING_IP);
+		sub(/%SBI_REGISTER_IPV4/, SBI_REGISTER_IPV4);
+		sub(/%SBI_BINDING_IPV4/, SBI_BINDING_IPV4);
 		sub(/%SBI_BINDING_PORT/, SBI_BINDING_PORT);
 		sub(/%MCC/, MCC);
 		sub(/%MNC/, MNC);

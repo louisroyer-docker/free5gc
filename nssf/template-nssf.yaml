@@ -6,8 +6,8 @@ configuration:
   nssfName: %NSSF_NAME # the name of this NSSF
   sbi: # Service-based interface information
     scheme: http # the protocol for sbi (http or https)
-    registerIPv4: %SBI_REGISTER_IP # IP used to register to NRF
-    bindingIPv4: %SBI_BINDING_IP  # IP used to bind the service
+    registerIPv4: %SBI_REGISTER_IPV4 # IP used to register to NRF
+    bindingIPv4: %SBI_BINDING_IPV4  # IP used to bind the service
     port: %SBI_BINDING_PORT # Port used to bind the service
     tls: # the local path of TLS key
       pem: %NSSF_PEM # NSSF TLS Certificate

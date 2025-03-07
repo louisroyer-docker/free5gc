@@ -35,8 +35,8 @@ Environment variables for templating:
 ```yaml
 environment:
   N2: "192.0.2.1"
-  SBI_REGISTER_IP: "amf.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "198.51.100.1" # use only an IP address in this field
+  SBI_REGISTER_IPV4: "198.51.100.1" # if you use NAT
+  SBI_BINDING_IPV4: "198.51.100.1"
   SBI_BINDING_PORT: "8000" # default: "8000"
   MCC: "001"
   MNC: "01"
@@ -81,8 +81,8 @@ environment:
 Environment variables for templating:
 ```yaml
 environment:
-  SBI_REGISTER_IP: "ausf.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "198.51.100.2" # use only an IP address in this field
+  SBI_REGISTER_IPV4: "198.51.100.2" # if you use NAT
+  SBI_BINDING_IPV4: "198.51.100.2"
   SBI_BINDING_PORT: "8000" # default: "8000"
   MCC: "001"
   MNC: "01"
@@ -118,8 +118,8 @@ environment:
   MONGO_HOST: "mongodb.db"
   MONGO_PORT: "27017"
   MONGO_NAME: "free5gc"
-  SBI_REGISTER_IP: "chf.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "198.51.100.10" # use only an IP address in this field
+  SBI_REGISTER_IPV4: "198.51.100.10" # if you use NAT
+  SBI_BINDING_IPV4: "198.51.100.10"
   SBI_BINDING_PORT: "8000" # default: "8000"
   NRF: "nrf.sbi:8000"
   NRF_PEM: cert/nrf.pem
@@ -156,8 +156,8 @@ environment:
   MONGO_HOST: "mongodb.db"
   MONGO_PORT: "27017"
   MONGO_NAME: "free5gc"
-  SBI_REGISTER_IP: "nrf.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "198.51.100.3" # use only an IP address in this field
+  SBI_REGISTER_IPV4: "198.51.100.3" # if you use NAT
+  SBI_BINDING_IPV4: "198.51.100.3"
   SBI_BINDING_PORT: "8000" # default: "8000"
   MCC: "001"
   MNC: "01"
@@ -191,8 +191,8 @@ environment:
 Environment variables for templating:
 ```yaml
 environment:
-  SBI_REGISTER_IP: "nssf.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "198.51.100.3" # use only an IP address in this field
+  SBI_REGISTER_IPV4: "198.51.100.3" # if you use NAT
+  SBI_BINDING_IPV4: "198.51.100.3"
   SBI_BINDING_PORT: "8000" # default: "8000"
   MCC: "001"
   MNC: "01"
@@ -303,8 +303,8 @@ environment:
   MONGO_HOST: "mongodb.db"
   MONGO_PORT: "27017"
   MONGO_NAME: "free5gc"
-  SBI_REGISTER_IP: "pcf.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "198.51.100.5" # use only an IP address in this field
+  SBI_REGISTER_IPV4: "198.51.100.5" # if you use NAT
+  SBI_BINDING_IPV4: "198.51.100.5"
   SBI_BINDING_PORT: "8000" # default: "8000"
   NRF: "nrf.sbi:8000"
   NRF_PEM: cert/nrf.pem
@@ -342,8 +342,8 @@ Environment variables for templating:
 ```yaml
 environment:
   N4: "203.0.113.1"
-  SBI_REGISTER_IP: "smf.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "198.51.100.6" # use only an IP address in this field
+  SBI_REGISTER_IPV4: "198.51.100.6" # if you use NAT
+  SBI_BINDING_IPV4: "198.51.100.6"
   SBI_BINDING_PORT: "8000" # default: "8000"
   NRF: "nrf.sbi:8000"
   NRF_PEM: cert/nrf.pem
@@ -437,8 +437,8 @@ environment:
 Environment variables for templating:
 ```yaml
 environment:
-  SBI_REGISTER_IP: "udm.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "198.51.100.7" # use only an IP address in this field
+  SBI_REGISTER_IPV4: "198.51.100.7" # if you use NAT
+  SBI_BINDING_IPV4: "198.51.100.7"
   SBI_BINDING_PORT: "8000" # default: "8000"
   NRF: "nrf.sbi:8000"
   NRF_PEM: cert/nrf.pem
@@ -472,8 +472,8 @@ environment:
   MONGO_HOST: "mongodb.db"
   MONGO_PORT: "27017"
   MONGO_NAME: "free5gc"
-  SBI_REGISTER_IP: "udr.sbi" # you can use a domain or an IP address
-  SBI_BINDING_IP: "198.51.100.8" # use only an IP address in this field
+  SBI_REGISTER_IPV4: "198.51.100.8" # if you use NAT
+  SBI_BINDING_IPV4: "198.51.100.8"
   SBI_BINDING_PORT: "8000" # default: "8000"
   NRF: "nrf.sbi:8000"
   NRF_PEM: cert/nrf.pem

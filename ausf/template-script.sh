@@ -7,13 +7,24 @@
 set -e
 mkdir -p "$(dirname "${CONFIG_FILE}")"
 
-if [ -z "$SBI_REGISTER_IP" ]; then
-	echo "Missing mandatory environment variable (SBI_REGISTER_IP)." > /dev/stderr
-	exit 1
+if [ -z "$SBI_BINDING_IPV4" ]; then
+	if [ -z "$SBI_BINDING_IP" ]; then
+		echo "Missing mandatory environment variable (SBI_BINDING_IPV4)." > /dev/stderr
+		exit 1
+	else
+		echo "Warning: SBI_BINDING_IP is deprecated. Use SBI_BINDING_IPV4 instead." > /dev/stderr
+		SBI_BINDING_IPV4="${SBI_BINDING_IP}"
+	fi
 fi
-if [ -z "$SBI_BINDING_IP" ]; then
-	echo "Missing mandatory environment variable (SBI_BINDING_IP)." > /dev/stderr
-	exit 1
+if [ -z "$SBI_REGISTER_IPV4" ]; then
+	if [ -z "$SBI_REGISTER_IP" ]; then
+		# fallback on SBI_BINDING_IPV4
+		SBI_REGISTER_IPV4="${SBI_BINDING_IPV4}"
+		exit 1
+	else
+		echo "Warning: SBI_REGISTER_IP is deprecated. Use SBI_REGISTER_IPV4 instead." > /dev/stderr
+		SBI_REGISTER_IPV4="${SBI_REGISTER_IP}"
+	fi
 fi
 if [ -z "$NRF" ]; then
 	echo "Missing mandatory environment variable (NRF)." > /dev/stderr
@@ -21,8 +32,8 @@ if [ -z "$NRF" ]; then
 fi
 
 awk \
-	-v SBI_REGISTER_IP="${SBI_REGISTER_IP}" \
-	-v SBI_BINDING_IP="${SBI_BINDING_IP}" \
+	-v SBI_REGISTER_IPV4="${SBI_REGISTER_IPV4}" \
+	-v SBI_BINDING_IPV4="${SBI_BINDING_IPV4}" \
 	-v SBI_BINDING_PORT="${SBI_BINDING_PORT:-8000}" \
 	-v MCC="${MCC:-001}" \
 	-v MNC="${MNC:-01}" \
@@ -35,8 +46,8 @@ awk \
 	-v LOG_REPORT_CALLER="${LOG_REPORT_CALLER:-false}" \
 	'{
 		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
-		sub(/%SBI_BINDING_IP/, SBI_BINDING_IP);
-		sub(/%SBI_BINDING_PORT/, SBI_BINDING_PORT);
+		sub(/%SBI_REGISTER_IPV4/, SBI_REGISTER_IPV4);
+		sub(/%SBI_BINDING_IPV4/, SBI_BINDING_IPV4);
 		sub(/%MCC/, MCC);
 		sub(/%MNC/, MNC);
 		sub(/%NRF_URI/, NRF_URI);
