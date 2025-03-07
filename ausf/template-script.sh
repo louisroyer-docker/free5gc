@@ -45,9 +45,9 @@ awk \
 	-v LOG_ENABLE="${LOG_ENABLE:-true}" \
 	-v LOG_REPORT_CALLER="${LOG_REPORT_CALLER:-false}" \
 	'{
-		sub(/%SBI_REGISTER_IP/, SBI_REGISTER_IP);
 		sub(/%SBI_REGISTER_IPV4/, SBI_REGISTER_IPV4);
 		sub(/%SBI_BINDING_IPV4/, SBI_BINDING_IPV4);
+		sub(/%SBI_BINDING_PORT/, SBI_BINDING_PORT);
 		sub(/%MCC/, MCC);
 		sub(/%MNC/, MNC);
 		sub(/%NRF_URI/, NRF_URI);
