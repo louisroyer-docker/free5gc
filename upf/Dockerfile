@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT
 
 FROM golang:1.21 AS builder
-ARG COMMIT_GTP5GNL=cab8756df577fae95f93225a83f31db49b02a0f5
+ARG COMMIT_GTP5GNL=v1.6.0
 RUN : ${COMMIT_GTP5GNL:? Missing build-arg COMMIT_GTP5GNL.} && go install \
     github.com/free5gc/go-gtp5gnl/cmd/gogtp5g-tunnel@${COMMIT_GTP5GNL}
 ARG COMMIT=v1.2.6
