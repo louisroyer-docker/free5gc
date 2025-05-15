@@ -27,6 +27,9 @@ configuration:
     hostIPv4: %BILLING_IP # billing server ftp server
     port: 2121 # billing server listen on port 2121
     listenPort: 2122 # cgf ftp server listen port
+    passiveTransferPortRange:
+      start: 2123
+      end: 2130
     tls:
       pem: %CHF_PEM
       key: %CHF_KEY
